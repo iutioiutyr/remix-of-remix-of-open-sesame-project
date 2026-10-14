@@ -15,6 +15,7 @@ import { Route as AnimationRouteImport } from './routes/animation'
 import { Route as MoviesRouteImport } from './routes/movies'
 import { Route as MusicRouteImport } from './routes/music'
 import { Route as SeriesRouteImport } from './routes/series'
+import { Route as ApiPublicFirebaseConfigRouteImport } from './routes/api/public/firebase-config'
 import { Route as ApiPublicPesapalSplatRouteImport } from './routes/api/public/pesapal/$'
 
 const IndexRoute = IndexRouteImport.update({
@@ -47,6 +48,11 @@ const SeriesRoute = SeriesRouteImport.update({
   path: '/series',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicFirebaseConfigRoute = ApiPublicFirebaseConfigRouteImport.update({
+  id: '/api/public/firebase-config',
+  path: '/api/public/firebase-config',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicPesapalSplatRoute = ApiPublicPesapalSplatRouteImport.update({
   id: '/api/public/pesapal/$',
   path: '/api/public/pesapal/$',
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/movies': typeof MoviesRoute
   '/music': typeof MusicRoute
   '/series': typeof SeriesRoute
+  '/api/public/firebase-config': typeof ApiPublicFirebaseConfigRoute
   '/api/public/pesapal/$': typeof ApiPublicPesapalSplatRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/movies': typeof MoviesRoute
   '/music': typeof MusicRoute
   '/series': typeof SeriesRoute
+  '/api/public/firebase-config': typeof ApiPublicFirebaseConfigRoute
   '/api/public/pesapal/$': typeof ApiPublicPesapalSplatRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/movies': typeof MoviesRoute
   '/music': typeof MusicRoute
   '/series': typeof SeriesRoute
+  '/api/public/firebase-config': typeof ApiPublicFirebaseConfigRoute
   '/api/public/pesapal/$': typeof ApiPublicPesapalSplatRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/movies'
     | '/music'
     | '/series'
+    | '/api/public/firebase-config'
     | '/api/public/pesapal/$'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/movies'
     | '/music'
     | '/series'
+    | '/api/public/firebase-config'
     | '/api/public/pesapal/$'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/movies'
     | '/music'
     | '/series'
+    | '/api/public/firebase-config'
     | '/api/public/pesapal/$'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   MoviesRoute: typeof MoviesRoute
   MusicRoute: typeof MusicRoute
   SeriesRoute: typeof SeriesRoute
+  ApiPublicFirebaseConfigRoute: typeof ApiPublicFirebaseConfigRoute
   ApiPublicPesapalSplatRoute: typeof ApiPublicPesapalSplatRoute
 }
 
@@ -165,6 +178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SeriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/firebase-config': {
+      id: '/api/public/firebase-config'
+      path: '/api/public/firebase-config'
+      fullPath: '/api/public/firebase-config'
+      preLoaderRoute: typeof ApiPublicFirebaseConfigRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/pesapal/$': {
       id: '/api/public/pesapal/$'
       path: '/api/public/pesapal/$'
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   MoviesRoute: MoviesRoute,
   MusicRoute: MusicRoute,
   SeriesRoute: SeriesRoute,
+  ApiPublicFirebaseConfigRoute: ApiPublicFirebaseConfigRoute,
   ApiPublicPesapalSplatRoute: ApiPublicPesapalSplatRoute,
 }
 export const routeTree = rootRouteImport
