@@ -17,7 +17,7 @@
 .select-wrap select { width: 100%; appearance: none; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 9px 36px 9px 12px; color: rgba(255,255,255,0.8); font-size: 0.85rem; outline: none; cursor: pointer; }
 .select-wrap select option { background: #0d1a10; }
 .sel-arrow { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; color: rgba(255,255,255,0.4); }
-.btn-add { width: 100%; padding: 11px; background: #7c3aed; border: none; border-radius: 10px; color: #fff; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: filter 0.2s; }
+.btn-add { width: 100%; padding: 11px; background: linear-gradient(135deg,#4db5ff,#00a3ff); border: none; border-radius: 10px; color: #fff; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: filter 0.2s; }
 .btn-add:hover:not(:disabled) { filter: brightness(1.12); }
 .btn-add:disabled { opacity: 0.4; cursor: not-allowed; }
 .save-msg { color: #3b9cff; font-size: 0.78rem; font-weight: 600; margin-top: 10px; text-align: center; }

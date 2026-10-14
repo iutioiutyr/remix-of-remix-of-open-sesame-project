@@ -21,14 +21,9 @@ export default function AppFooter() {
 
           {/* Phone numbers */}
           <div className="care-phones">
-            <a href="tel:+211927208020" className="care-phone">
-              <img className="care-flag" src="https://flagcdn.com/ss.svg" alt="South Sudan" />
-              <span className="care-num">+211 927 208 020</span>
-            </a>
-            <div className="care-divider"></div>
-            <a href="tel:+256782202045" className="care-phone">
+            <a href="tel:+256776208516" className="care-phone">
               <img className="care-flag" src="https://flagcdn.com/ug.svg" alt="Uganda" />
-              <span className="care-num">+256 782 202 045</span>
+              <span className="care-num">+256 776 208516</span>
             </a>
           </div>
 

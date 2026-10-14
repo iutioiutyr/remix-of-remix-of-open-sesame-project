@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import './AdminMusicTab.css'
+import { dbMusic, addMusic, removeMusic } from '../../store/db'
+import { useV } from '../../reactive'
 
 const GENRES = ['Afrobeats', 'Hip-Hop', 'R&B', 'Pop', 'Gospel', 'Reggae', 'Electronic', 'Other']
 
-interface MusicItem { id: number; title: string; artist: string; genre: string; streamUrl: string; posterUrl: string; year: number }
-
-let nextId = 1
 
 const defaultForm = () => ({ title: '', artist: '', genre: 'Afrobeats', streamUrl: '', posterUrl: '', year: new Date().getFullYear() })
 
@@ -14,19 +13,22 @@ function onImgErr(e: React.SyntheticEvent<HTMLImageElement>) {
 }
 
 export default function AdminMusicTab() {
-  const [items, setItems] = useState<MusicItem[]>([])
+  const items = useV(() => dbMusic.value)
+  const [busy, setBusy] = useState(false)
   const [saved, setSaved] = useState(false)
   const [form, setForm] = useState(defaultForm())
 
-  function addItem() {
-    setItems(prev => [...prev, { id: nextId++, ...form }])
+  async function addItem() {
+    setBusy(true)
+    try { await addMusic(form) } catch (e: any) { alert('Upload failed: ' + (e?.message || e)); setBusy(false); return }
+    setBusy(false)
     setForm(defaultForm())
     setSaved(true)
     setTimeout(() => setSaved(false), 2000)
   }
 
-  function deleteItem(id: number) {
-    setItems(prev => prev.filter(x => x.id !== id))
+  function deleteItem(id: string) {
+    if (confirm('Delete this song?')) removeMusic(id)
   }
 
   return (
@@ -68,12 +70,12 @@ export default function AdminMusicTab() {
             <input value={form.year} onChange={e => setForm({ ...form, year: Number(e.target.value) })} type="number" placeholder="2025" />
           </div>
         </div>
-        <button className="btn-add" onClick={addItem} disabled={!form.title || !form.streamUrl}>Add Music Video</button>
+        <button className="btn-add" onClick={addItem} disabled={busy || !form.title || !form.streamUrl}>Add Music Video</button>
         {saved && <p className="save-msg">✓ Music video added</p>}
       </div>
       <div className="items-grid">
         {items.map(item => (
-          <div key={item.id} className="item-card">
+          <div key={item.key} className="item-card">
             <div className="ic-poster">
               {item.posterUrl ? (
                 <img src={item.posterUrl} alt="" className="ic-img" onError={onImgErr} />
@@ -87,7 +89,7 @@ export default function AdminMusicTab() {
             <div className="ic-body">
               <p className="ic-title">{item.title}</p>
               <p className="ic-meta">{item.artist || 'Unknown'} · {item.year}</p>
-              <button className="ic-btn-del" onClick={() => deleteItem(item.id)}>Delete</button>
+              <button className="ic-btn-del" onClick={() => deleteItem(item.key)}>Delete</button>
             </div>
           </div>
         ))}

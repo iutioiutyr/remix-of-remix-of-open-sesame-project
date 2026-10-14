@@ -565,3 +565,22 @@ export const publicAll = computed<Movie[]>(() => {
 export const publicTrending = computed<Movie[]>(() =>
   publicAll.value.filter((m) => m.isTrending).slice(0, 24)
 )
+
+// ─── Music ─────────────────────────────────────────────────────────────────
+export interface AdminMusic { key: string; title: string; artist: string; genre: string; streamUrl: string; posterUrl: string; year: number; createdAt?: string }
+export const dbMusic = ref<AdminMusic[]>([])
+onSnapshot(collection(db, 'music'), (snap) => {
+  const list: AdminMusic[] = []
+  snap.forEach((c) => {
+    const d = c.data()
+    list.push({ key: c.id, title: d.title || '', artist: d.artist || '', genre: d.genre || 'Other', streamUrl: d.streamUrl || d.stream_url || '', posterUrl: d.posterUrl || d.poster_url || '', year: Number(d.year) || 0, createdAt: d.createdAt || '' })
+  })
+  list.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''))
+  dbMusic.value = list
+}, () => {})
+export async function addMusic(data: Omit<AdminMusic, 'key' | 'createdAt'>) {
+  return addDoc(collection(db, 'music'), { ...data, createdAt: new Date().toISOString() })
+}
+export async function removeMusic(key: string) {
+  return deleteDoc(doc(db, 'music', key))
+}
