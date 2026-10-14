@@ -59,6 +59,7 @@ export interface AdminCarousel {
   imageUrl: string
   linkContent: string
   createdAt?: string
+  order?: number
 }
 
 export interface AdminSubscription {
