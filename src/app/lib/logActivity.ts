@@ -9,11 +9,11 @@ export type ActivityAction =
 
 export interface ActivityPayload {
   action: ActivityAction
-  contentId?: string | number
-  contentTitle?: string
-  contentType?: 'MOVIES' | 'TV SERIES' | 'ANIMATION' | string
-  contentCategory?: string
-  episodeNumber?: number
+  contentId?: string | number | undefined
+  contentTitle?: string | undefined
+  contentType?: 'MOVIES' | 'TV SERIES' | 'ANIMATION' | string | undefined
+  contentCategory?: string | undefined
+  episodeNumber?: number | undefined
 }
 
 export async function logActivity(payload: ActivityPayload): Promise<void> {

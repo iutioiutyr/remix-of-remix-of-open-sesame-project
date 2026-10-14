@@ -3,7 +3,7 @@ const BASE = '/api/public/pesapal'
 function getSafeErrorMessage(payload: unknown): string | null {
   if (!payload || typeof payload !== 'object' || Array.isArray(payload)) return null
 
-  const body = payload as Record<string, unknown>
+  const body = payload as Record<string, any>
   const candidates = [
     body.error_description,
     body.message,
@@ -17,9 +17,9 @@ function getSafeErrorMessage(payload: unknown): string | null {
       ? candidate
       : candidate && typeof candidate === 'object' && !Array.isArray(candidate)
         ? String(
-            (candidate as Record<string, unknown>).message
-            || (candidate as Record<string, unknown>).description
-            || (candidate as Record<string, unknown>).code
+            (candidate as Record<string, any>).message
+            || (candidate as Record<string, any>).description
+            || (candidate as Record<string, any>).code
             || ''
           )
         : ''
@@ -39,7 +39,7 @@ async function requestPesapalJson(
   url: string,
   init: RequestInit,
   action: string
-): Promise<Record<string, unknown>> {
+): Promise<Record<string, any>> {
   let response: Response
   let responseText: string
 
@@ -72,7 +72,7 @@ async function requestPesapalJson(
     throw new Error(`PesaPal ${action} returned an invalid response (HTTP ${response.status}).`)
   }
 
-  return payload as Record<string, unknown>
+  return payload as Record<string, any>
 }
 
 export interface PesapalOrder {
