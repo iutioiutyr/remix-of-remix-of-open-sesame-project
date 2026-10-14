@@ -10,11 +10,35 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AnimationRouteImport } from './routes/animation'
+import { Route as MoviesRouteImport } from './routes/movies'
+import { Route as SeriesRouteImport } from './routes/series'
 import { Route as ApiPublicPesapalSplatRouteImport } from './routes/api/public/pesapal/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnimationRoute = AnimationRouteImport.update({
+  id: '/animation',
+  path: '/animation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoviesRoute = MoviesRouteImport.update({
+  id: '/movies',
+  path: '/movies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeriesRoute = SeriesRouteImport.update({
+  id: '/series',
+  path: '/series',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicPesapalSplatRoute = ApiPublicPesapalSplatRouteImport.update({
@@ -25,27 +49,62 @@ const ApiPublicPesapalSplatRoute = ApiPublicPesapalSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/animation': typeof AnimationRoute
+  '/movies': typeof MoviesRoute
+  '/series': typeof SeriesRoute
   '/api/public/pesapal/$': typeof ApiPublicPesapalSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/animation': typeof AnimationRoute
+  '/movies': typeof MoviesRoute
+  '/series': typeof SeriesRoute
   '/api/public/pesapal/$': typeof ApiPublicPesapalSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/animation': typeof AnimationRoute
+  '/movies': typeof MoviesRoute
+  '/series': typeof SeriesRoute
   '/api/public/pesapal/$': typeof ApiPublicPesapalSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/public/pesapal/$'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/animation'
+    | '/movies'
+    | '/series'
+    | '/api/public/pesapal/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/public/pesapal/$'
-  id: '__root__' | '/' | '/api/public/pesapal/$'
+  to:
+    | '/'
+    | '/admin'
+    | '/animation'
+    | '/movies'
+    | '/series'
+    | '/api/public/pesapal/$'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/animation'
+    | '/movies'
+    | '/series'
+    | '/api/public/pesapal/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  AnimationRoute: typeof AnimationRoute
+  MoviesRoute: typeof MoviesRoute
+  SeriesRoute: typeof SeriesRoute
   ApiPublicPesapalSplatRoute: typeof ApiPublicPesapalSplatRoute
 }
 
@@ -56,6 +115,34 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/animation': {
+      id: '/animation'
+      path: '/animation'
+      fullPath: '/animation'
+      preLoaderRoute: typeof AnimationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/movies': {
+      id: '/movies'
+      path: '/movies'
+      fullPath: '/movies'
+      preLoaderRoute: typeof MoviesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/series': {
+      id: '/series'
+      path: '/series'
+      fullPath: '/series'
+      preLoaderRoute: typeof SeriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/pesapal/$': {
@@ -70,6 +157,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  AnimationRoute: AnimationRoute,
+  MoviesRoute: MoviesRoute,
+  SeriesRoute: SeriesRoute,
   ApiPublicPesapalSplatRoute: ApiPublicPesapalSplatRoute,
 }
 export const routeTree = rootRouteImport
