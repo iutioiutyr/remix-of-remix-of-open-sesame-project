@@ -38,6 +38,16 @@
   .gate-icon--sub { background: rgba(255,166,0,0.08); border-color: rgba(255,166,0,0.2); }
   .gate-title { font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 5px; }
   .gate-desc { font-size: 0.72rem; color: rgba(255,255,255,0.42); margin-bottom: 14px; line-height: 1.6; }
+  .gate-prices { display: flex; gap: 10px; width: 100%; margin-bottom: 14px; }
+  .gate-price {
+    flex: 1; min-width: 0; border-radius: 12px; padding: 12px 8px;
+    border: 1px solid rgba(77,181,255,0.25); background: rgba(77,181,255,0.05);
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+  }
+  .gate-price--all { border-color: rgba(255,208,0,0.35); background: rgba(255,208,0,0.06); }
+  .gate-price-num { font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1; }
+  .gate-price--all .gate-price-num { color: #ffd000; }
+  .gate-price-label { font-size: 0.56rem; font-weight: 600; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.06em; }
   .gate-btn {
     width: 100%; padding: 12px; border: none; border-radius: 12px;
     font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em;
