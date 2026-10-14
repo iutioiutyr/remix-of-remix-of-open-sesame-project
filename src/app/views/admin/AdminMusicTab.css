@@ -1,0 +1,36 @@
+@scope (.vjs-AdminMusicTab) {
+.tab-page { padding: 28px 24px; }
+.tab-header { margin-bottom: 20px; }
+.tab-title { font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 4px; }
+.tab-sub { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+.form-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; margin-bottom: 28px; }
+.form-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 18px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.col-2 { grid-column: span 2; }
+.field label { font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-transform: uppercase; }
+.req { color: #f87171; }
+.field input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 9px 12px; color: #fff; font-size: 0.85rem; outline: none; }
+.field input:focus { border-color: rgba(255,77,184,0.4); }
+.field input::placeholder { color: rgba(255,255,255,0.25); }
+.select-wrap { position: relative; }
+.select-wrap select { width: 100%; appearance: none; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 9px 36px 9px 12px; color: rgba(255,255,255,0.8); font-size: 0.85rem; outline: none; cursor: pointer; }
+.select-wrap select option { background: #0d1a10; }
+.sel-arrow { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; color: rgba(255,255,255,0.4); }
+.btn-add { width: 100%; padding: 11px; background: #7c3aed; border: none; border-radius: 10px; color: #fff; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: filter 0.2s; }
+.btn-add:hover:not(:disabled) { filter: brightness(1.12); }
+.btn-add:disabled { opacity: 0.4; cursor: not-allowed; }
+.save-msg { color: #ff4db8; font-size: 0.78rem; font-weight: 600; margin-top: 10px; text-align: center; }
+.items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+.item-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; overflow: hidden; }
+.ic-poster { position: relative; aspect-ratio: 1; background: rgba(255,255,255,0.04); overflow: hidden; }
+.ic-img { width: 100%; height: 100%; object-fit: cover; }
+.ic-no-poster { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.ic-genre { position: absolute; top: 8px; left: 8px; font-size: 0.58rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; background: rgba(167,139,250,0.8); color: #fff; }
+.ic-body { padding: 12px; }
+.ic-title { font-size: 0.8rem; font-weight: 700; color: #fff; margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ic-meta { font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+.ic-btn-del { width: 100%; padding: 5px 10px; background: rgba(220,38,38,0.1); border: 1px solid rgba(220,38,38,0.25); color: #f87171; border-radius: 6px; font-size: 0.68rem; font-weight: 700; cursor: pointer; }
+.empty { text-align: center; color: rgba(255,255,255,0.25); padding: 40px; grid-column: 1/-1; }
+@media (max-width: 640px) { .tab-page { padding: 16px 12px; } .form-grid { grid-template-columns: 1fr; } .col-2 { grid-column: span 1; } }
+}
