@@ -56,33 +56,34 @@
 
   .plan-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 7px; margin-bottom: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px; margin-bottom: 12px;
   }
   .plan-card {
-    position: relative; border-radius: 11px;
+    position: relative; border-radius: 13px;
     border: 1px solid rgba(255,255,255,0.08);
     background: rgba(255,255,255,0.03);
-    padding: 10px 8px 9px; display: flex; flex-direction: column; align-items: center; gap: 3px;
+    padding: 16px 10px 12px; display: flex; flex-direction: column; align-items: center; gap: 4px;
+    min-width: 0;
   }
-  .plan-card.popular { border-color: rgba(0,255,157,0.28); background: rgba(0,255,157,0.04); }
+  .plan-card.popular { border-color: rgba(77,181,255,0.35); background: rgba(77,181,255,0.05); }
   .popular-badge {
     position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
-    background: linear-gradient(135deg, #00ff9d, #00d4ff);
-    color: #021a10; font-size: 0.48rem; font-weight: 800;
+    background: linear-gradient(135deg, #4db5ff, #00a3ff);
+    color: #04121f; font-size: 0.48rem; font-weight: 800;
     letter-spacing: 0.08em; padding: 1px 7px; border-radius: 99px; white-space: nowrap;
   }
-  .plan-name { font-size: 0.7rem; font-weight: 800; color: #fff; text-align: center; margin-top: 4px; }
-  .plan-price-row { display: flex; align-items: baseline; gap: 2px; }
-  .plan-price { font-size: 1.05rem; font-weight: 800; color: #fff; line-height: 1; }
-  .plan-ugx { font-size: 0.5rem; font-weight: 700; color: rgba(0,255,157,0.7); }
-  .plan-period { font-size: 0.54rem; color: rgba(255,255,255,0.3); }
-  .plan-feature { font-size: 0.55rem; color: rgba(0,255,157,0.6); font-weight: 600; }
+  .plan-name { font-size: 0.72rem; font-weight: 800; color: #fff; text-align: center; margin-top: 4px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .plan-price-row { display: flex; align-items: baseline; gap: 3px; }
+  .plan-price { font-size: 1.5rem; font-weight: 800; color: #fff; line-height: 1; }
+  .plan-ugx { font-size: 0.55rem; font-weight: 700; color: rgba(77,181,255,0.8); }
+  .plan-period { font-size: 0.56rem; color: rgba(255,255,255,0.3); text-align: center; }
+  .plan-feature { font-size: 0.56rem; color: rgba(77,181,255,0.65); font-weight: 600; }
   .plan-sub-btn {
-    width: 100%; margin-top: 5px; padding: 5px;
-    background: linear-gradient(135deg, #00ff9d, #00c8b8);
-    color: #021a10; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.05em;
-    border: none; border-radius: 7px; cursor: pointer; transition: filter 0.2s;
+    width: 100%; margin-top: 6px; padding: 7px;
+    background: linear-gradient(135deg, #4db5ff, #00a3ff);
+    color: #04121f; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.05em;
+    border: none; border-radius: 8px; cursor: pointer; transition: filter 0.2s;
   }
   .plan-sub-btn:hover { filter: brightness(1.08); }
 
