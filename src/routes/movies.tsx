@@ -6,10 +6,10 @@ const Page = lazy(() => import("@/app/views/Movies"));
 export const Route = createFileRoute("/movies")({
   head: () => ({
     meta: [
-      { title: "Movies | VJ ONEFLEX.COM" },
-      { name: "description", content: "Browse and download Luo translated movies by VJ ONEFLEX." },
-      { property: "og:title", content: "Movies | VJ ONEFLEX.COM" },
-      { property: "og:description", content: "Browse and download Luo translated movies by VJ ONEFLEX." },
+      { title: "Movies | LUO NIGER" },
+      { name: "description", content: "Browse and download Luo translated movies by LUO NIGER." },
+      { property: "og:title", content: "Movies | LUO NIGER" },
+      { property: "og:description", content: "Browse and download Luo translated movies by LUO NIGER." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

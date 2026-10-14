@@ -195,7 +195,7 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
 
       const order = await pesapalSubmitOrder(token, ipnId, {
         amount: plan.price,
-        description: `VJ ONEFLEX - ${plan.name}`,
+        description: `LUO NIGER - ${plan.name}`,
         email: user.email || '',
         phone: phoneInput.trim(),
         firstName: user.displayName?.split(' ')[0] || 'Customer',
