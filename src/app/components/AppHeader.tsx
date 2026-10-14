@@ -39,6 +39,7 @@ export default function AppHeader() {
     { label: 'MOVIES', path: '/movies' },
     { label: 'SERIES', path: '/series' },
     { label: 'ANIMATION', path: '/animation' },
+    { label: 'MUSIC', path: '/music' },
     ...(isAdminV ? [{ label: 'ADMIN', path: '/admin' }] : []),
   ]
 
@@ -64,14 +65,11 @@ export default function AppHeader() {
 
             {/* Brand */}
             <Link to="/" className="brand-link">
-              <img src="/logo.png" alt="VJ ONEFLEX" className="brand-logo" />
-              <div className="brand-text">
-                <span className="brand-name">VJ ONEFLEX</span><span className="brand-dot">.COM</span>
-              </div>
+              <img src="/logo.png" alt="LUO NIGER" className="brand-logo" />
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden items-center gap-0.5 lg:flex">
+            <nav className="nav-pill hidden items-center lg:flex">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
@@ -190,6 +188,11 @@ export default function AppHeader() {
               <svg className="mob-nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            )}
+            {item.label === 'MUSIC' && (
+              <svg className="mob-nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 19V6l12-3v13M9 19a3 3 0 11-6 0 3 3 0 016 0zm12-3a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             )}
             {/* Admin icon */}
