@@ -3,7 +3,7 @@ import './Animation.css'
 export default function Music() {
   return (
     <main className="vjs-Animation page-main">
-      <div className="page-banner" style={{ background: 'radial-gradient(ellipse 100% 80% at 60% 0%, #3a2200 0%, #1a0d00 50%, #050c08 100%)' }}>
+      <div className="page-banner" style={{ background: 'radial-gradient(ellipse 100% 80% at 60% 0%, #3a2200 0%, #1a0d00 50%, #05070d 100%)' }}>
         <div className="page-banner-overlay"></div>
         <div className="page-banner-content">
           <p className="section-kicker mb-2">LISTEN</p>

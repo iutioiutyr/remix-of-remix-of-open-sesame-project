@@ -33,7 +33,7 @@ export default function Series() {
         className="page-banner"
         style={{
           background:
-            'radial-gradient(ellipse 100% 80% at 60% 0%, #1a0d2e 0%, #0f0720 50%, #050c08 100%)',
+            'radial-gradient(ellipse 100% 80% at 60% 0%, #1a0d2e 0%, #0f0720 50%, #05070d 100%)',
         }}
       >
         <div className="page-banner-overlay"></div>

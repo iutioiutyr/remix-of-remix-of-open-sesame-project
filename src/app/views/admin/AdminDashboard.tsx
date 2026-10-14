@@ -87,7 +87,7 @@ export default function AdminDashboard() {
     { label: 'Total Series', val: series.length, tab: 'series', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 2H8l-2 5h12z"/></svg>' },
     { label: 'Animation', val: animation.length, tab: 'animation', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="rgba(167,139,250,0.3)"/></svg>' },
     { label: 'Carousel Items', val: carousel.length, tab: 'carousel', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><rect x="1" y="6" width="22" height="13" rx="2"/><path d="M1 10h22"/></svg>' },
-    { label: 'Payments', val: paymentCount, tab: 'wallet', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>' },
+    { label: 'Payments', val: paymentCount, tab: 'wallet', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7cc0ff" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>' },
   ];
 
   const quickActions = [
@@ -96,8 +96,8 @@ export default function AdminDashboard() {
     { label: 'Animation', desc: 'Upload animated content', tab: 'animation', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="rgba(167,139,250,0.3)"/></svg>' },
     { label: 'Manage Carousel', desc: 'Update featured banners', tab: 'carousel', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><rect x="1" y="6" width="22" height="13" rx="2"/><path d="M1 10h22"/></svg>' },
     { label: 'Manage Users', desc: 'View & activate subscriptions', tab: 'users', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4dd0ff" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>' },
-    { label: 'Payment Wallet', desc: 'View payment history', tab: 'wallet', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>' },
-    { label: 'Subscription Plans', desc: 'Add, edit or remove plans', tab: 'plans', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d9a3" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>' },
+    { label: 'Payment Wallet', desc: 'View payment history', tab: 'wallet', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7cc0ff" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>' },
+    { label: 'Subscription Plans', desc: 'Add, edit or remove plans', tab: 'plans', icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b9cff" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>' },
   ];
 
   return (
@@ -134,7 +134,7 @@ export default function AdminDashboard() {
           <div className="tab-page">
             <div className="ov-header">
               <h1 className="ov-title">Admin Dashboard</h1>
-              <p className="ov-sub">Welcome back, wanifred03@gmail.com</p>
+              <p className="ov-sub">Welcome back, rubangakenerobinson96@gmail.com</p>
             </div>
 
             <div className="stat-grid">

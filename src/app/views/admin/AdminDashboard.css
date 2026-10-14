@@ -1,5 +1,5 @@
 
-.admin-wrap { min-height: 100vh; background: #050c08; display: flex; flex-direction: column; }
+.admin-wrap { min-height: 100vh; background: #05070d; display: flex; flex-direction: column; }
 
 .admin-topnav { display: none; }
 @media (min-width: 1024px) {
@@ -7,18 +7,18 @@
   .admin-topnav::-webkit-scrollbar { display: none; }
 }
 .topnav-back { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 12px 18px; color: rgba(255,255,255,0.5); font-size: 0.72rem; font-weight: 600; text-decoration: none; transition: color 0.15s, background 0.15s; white-space: nowrap; flex-shrink: 0; }
-.topnav-back:hover { color: #00d9a3; background: rgba(0,217,163,0.05); }
+.topnav-back:hover { color: #3b9cff; background: rgba(59,156,255,0.05); }
 .topnav-divider { width: 1px; background: rgba(255,255,255,0.1); margin: 8px 0; flex-shrink: 0; }
 .topnav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 12px 20px; border: none; background: transparent; color: rgba(255,255,255,0.45); font-size: 0.72rem; font-weight: 600; cursor: pointer; letter-spacing: 0.03em; transition: color 0.15s, background 0.15s; white-space: nowrap; border-bottom: 2px solid transparent; min-width: 72px; }
 .topnav-item:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.04); }
-.topnav-item.active { color: #00d9a3; border-bottom-color: #00d9a3; background: rgba(0,217,163,0.06); }
+.topnav-item.active { color: #3b9cff; border-bottom-color: #3b9cff; background: rgba(59,156,255,0.06); }
 .topnav-icon { display: flex; align-items: center; }
 .topnav-label { font-size: 0.68rem; }
 
 .admin-mobile-topbar { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background: rgba(0,0,0,0.7); border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); }
 @media (min-width: 1024px) { .admin-mobile-topbar { display: none; } }
 .mob-back-link { display: flex; align-items: center; gap: 5px; color: rgba(255,255,255,0.5); font-size: 0.72rem; font-weight: 600; text-decoration: none; padding: 4px 8px; border-radius: 7px; border: 1px solid rgba(255,255,255,0.1); transition: color 0.15s; }
-.mob-back-link:hover { color: #00d9a3; }
+.mob-back-link:hover { color: #3b9cff; }
 .mob-topbar-title { font-size: 0.85rem; font-weight: 800; color: #fff; letter-spacing: 0.05em; }
 .mob-topbar-logo { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
 
@@ -43,7 +43,7 @@
 .stat-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 10px; cursor: pointer; transition: border-color 0.2s, background 0.2s, transform 0.15s; display: flex; flex-direction: column; gap: 5px; }
 @media (min-width: 640px) { .stat-card { border-radius: 12px; padding: 14px 12px; gap: 6px; } }
 @media (min-width: 1024px) { .stat-card { border-radius: 14px; padding: 20px 16px; gap: 8px; } }
-.stat-card:hover { border-color: rgba(0,217,163,0.2); background: rgba(0,217,163,0.03); transform: translateY(-2px); }
+.stat-card:hover { border-color: rgba(59,156,255,0.2); background: rgba(59,156,255,0.03); transform: translateY(-2px); }
 .stat-icon { display: flex; align-items: center; }
 .stat-val { font-size: 1.6rem; font-weight: 900; color: #fff; line-height: 1; }
 @media (min-width: 640px) { .stat-val { font-size: 1.8rem; } }
@@ -77,7 +77,7 @@
 
 .admin-mob-nav {
   display: flex; align-items: stretch; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-  height: 62px; background: rgba(5,10,7,0.97); backdrop-filter: blur(20px);
+  height: 62px; background: rgba(5,7,13,0.97); backdrop-filter: blur(20px);
   border-top: 1px solid rgba(255,255,255,0.09);
   padding-bottom: env(safe-area-inset-bottom);
   overflow-x: auto; overflow-y: hidden;
@@ -96,8 +96,8 @@
 }
 .amob-item:hover { color: rgba(255,255,255,0.65); }
 .amob-item.active {
-  color: #00d9a3;
-  background: rgba(0,217,163,0.07);
+  color: #3b9cff;
+  background: rgba(59,156,255,0.07);
 }
 .amob-icon { display: flex; align-items: center; flex-shrink: 0; }
 .amob-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; color: inherit; }

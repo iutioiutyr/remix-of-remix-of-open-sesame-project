@@ -11,7 +11,7 @@
   .modal-box {
     position: relative; width: 100%; max-width: 360px;
     border-radius: 18px; border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(8,14,12,0.99); padding: 18px 16px 16px;
+    background: rgba(8,10,18,0.99); padding: 18px 16px 16px;
     box-shadow: 0 28px 64px rgba(0,0,0,0.7);
     max-height: 90vh; overflow-y: auto;
     transition: max-width 0.3s ease;
@@ -93,7 +93,7 @@
   .field { margin-bottom: 10px; }
   .field-label { display: block; font-size: 0.63rem; font-weight: 600; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
   .field-input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 9px; color: #fff; font-size: 0.88rem; padding: 9px 12px; outline: none; transition: border-color 0.2s; box-sizing: border-box; }
-  .field-input:focus { border-color: rgba(0,217,163,0.38); }
+  .field-input:focus { border-color: rgba(59,156,255,0.38); }
 
   .pay-btn {
     width: 100%; padding: 11px;
@@ -145,7 +145,7 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 10px 12px 8px;
     border-bottom: 1px solid rgba(255,255,255,0.07);
-    background: rgba(8,14,12,0.98);
+    background: rgba(8,10,18,0.98);
   }
   .pp-back-btn {
     display: flex; align-items: center; gap: 4px;
@@ -157,7 +157,7 @@
   .pp-secure-label {
     display: flex; align-items: center; gap: 4px;
     font-size: 0.62rem; font-weight: 600;
-    color: rgba(0,217,163,0.75); letter-spacing: 0.03em;
+    color: rgba(59,156,255,0.75); letter-spacing: 0.03em;
   }
   .pay-iframe {
     width: 100%;
@@ -172,12 +172,12 @@
   .pp-status-bar {
     display: flex; align-items: center; justify-content: space-between;
     padding: 8px 12px; gap: 8px;
-    background: rgba(8,14,12,0.98);
+    background: rgba(8,10,18,0.98);
     border-top: 1px solid rgba(255,255,255,0.07);
   }
   .pp-waiting {
     display: flex; align-items: center; gap: 5px;
-    font-size: 0.6rem; color: rgba(0,217,163,0.75); font-weight: 600; white-space: nowrap;
+    font-size: 0.6rem; color: rgba(59,156,255,0.75); font-weight: 600; white-space: nowrap;
   }
   .pp-plan-label {
     font-size: 0.6rem; color: rgba(255,255,255,0.4);
@@ -186,15 +186,15 @@
   .pp-amount {
     font-size: 0.68rem; font-weight: 800; color: #fff; white-space: nowrap;
   }
-  .pulse-dot { width: 7px; height: 7px; border-radius: 50%; background: #00d9a3; animation: pulse 1.4s ease-in-out infinite; flex-shrink: 0; }
+  .pulse-dot { width: 7px; height: 7px; border-radius: 50%; background: #3b9cff; animation: pulse 1.4s ease-in-out infinite; flex-shrink: 0; }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-  .active-sub-box { width: 100%; margin-top: 14px; background: rgba(0,217,163,0.06); border: 1px solid rgba(0,217,163,0.18); border-radius: 11px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .active-sub-box { width: 100%; margin-top: 14px; background: rgba(59,156,255,0.06); border: 1px solid rgba(59,156,255,0.18); border-radius: 11px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
   .active-sub-row { display: flex; justify-content: space-between; align-items: center; }
   .active-sub-label { font-size: 0.68rem; color: rgba(255,255,255,0.38); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
   .active-sub-val { font-size: 0.82rem; color: #fff; font-weight: 700; }
 
-  .success-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(0,217,163,0.1); border: 2px solid rgba(0,217,163,0.3); display: flex; align-items: center; justify-content: center; }
+  .success-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(59,156,255,0.1); border: 2px solid rgba(59,156,255,0.3); display: flex; align-items: center; justify-content: center; }
   .fail-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(248,113,113,0.1); border: 2px solid rgba(248,113,113,0.3); display: flex; align-items: center; justify-content: center; }
 
   .modal-enter-active, .modal-leave-active { transition: opacity 0.2s ease; }

@@ -10,12 +10,12 @@ interface HeroSlide {
 }
 
 const presets = [
-  { name: 'Ocean', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #0d2a4a 0%, #071220 60%, #050c08 100%)', accent: '#4db8ff' },
-  { name: 'Gold', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #1a1a08 0%, #100f06 60%, #050c08 100%)', accent: '#4dd0ff' },
-  { name: 'Purple', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #1a0a3a 0%, #0f0620 60%, #050c08 100%)', accent: '#00e0b0' },
-  { name: 'Forest', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #0a1f0a 0%, #071207 60%, #050c08 100%)', accent: '#7aff5c' },
-  { name: 'Red', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #2a0a0a 0%, #180606 60%, #050c08 100%)', accent: '#ff6b6b' },
-  { name: 'Teal', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #002a2a 0%, #001515 60%, #050c08 100%)', accent: '#00ffcc' },
+  { name: 'Ocean', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #0d2a4a 0%, #071220 60%, #05070d 100%)', accent: '#4db8ff' },
+  { name: 'Gold', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #1a1a08 0%, #100f06 60%, #05070d 100%)', accent: '#4dd0ff' },
+  { name: 'Purple', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #1a0a3a 0%, #0f0620 60%, #05070d 100%)', accent: '#4db5ff' },
+  { name: 'Forest', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #0a1f0a 0%, #071207 60%, #05070d 100%)', accent: '#7aff5c' },
+  { name: 'Red', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #2a0a0a 0%, #180606 60%, #05070d 100%)', accent: '#ff6b6b' },
+  { name: 'Teal', bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #002a2a 0%, #001515 60%, #05070d 100%)', accent: '#00ffcc' },
 ];
 
 export default function AdminHeroSlidesTab() {
@@ -95,20 +95,20 @@ export default function AdminHeroSlidesTab() {
             <div className="field">
               <label>Accent Color</label>
               <div className="color-row">
-                <input value={form.accent} onChange={(e) => setForm({ ...form, accent: e.target.value })} placeholder="#00d9a3" className="color-text" />
+                <input value={form.accent} onChange={(e) => setForm({ ...form, accent: e.target.value })} placeholder="#3b9cff" className="color-text" />
                 <input value={form.accent} onChange={(e) => setForm({ ...form, accent: e.target.value })} type="color" className="color-picker" />
               </div>
             </div>
             <div className="field">
               <label>Preview</label>
               <div className="slide-preview" style={{ background: form.bg || '#111' }}>
-                <p className="prev-type" style={{ color: form.accent || '#00d9a3' }}>{form.type || 'TYPE'}</p>
+                <p className="prev-type" style={{ color: form.accent || '#3b9cff' }}>{form.type || 'TYPE'}</p>
                 <p className="prev-title">{form.title || 'Title'}</p>
               </div>
             </div>
             <div className="field col-2">
               <label>Background CSS Gradient *</label>
-              <input value={form.bg} onChange={(e) => setForm({ ...form, bg: e.target.value })} placeholder="radial-gradient(ellipse 120% 100% at 80% 20%, #0d2a4a 0%, #071220 60%, #050c08 100%)" />
+              <input value={form.bg} onChange={(e) => setForm({ ...form, bg: e.target.value })} placeholder="radial-gradient(ellipse 120% 100% at 80% 20%, #0d2a4a 0%, #071220 60%, #05070d 100%)" />
               <p className="field-hint">Paste a CSS gradient, or use one of the presets below:</p>
               <div className="preset-row">
                 {presets.map((p) => (
