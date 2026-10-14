@@ -19,6 +19,14 @@ export async function activateSubscription(
   orderTrackingId: string,
   status: { paymentMethod: string; confirmationCode: string; paymentAccount: string; amount: number }
 ) {
+  if (plan.id.startsWith('movie:')) {
+    const movieId = plan.id.slice(6)
+    await setDoc(doc(db, 'subscriptions', userId), {
+      movies: { [movieId]: { amount: status.amount || plan.price, orderTrackingId, paidAt: new Date().toISOString() } },
+      orderTrackingId,
+    }, { merge: true })
+    return
+  }
   const startDate = new Date()
   const endDate = new Date()
   endDate.setDate(endDate.getDate() + plan.days)
@@ -35,7 +43,13 @@ export async function activateSubscription(
     endDate: endDate.toISOString(),
     active: true,
     createdAt: new Date().toISOString(),
-  })
+  }, { merge: true })
+}
+
+export function hasMovieAccess(movieId?: string): boolean {
+  if (isSubscribed.value) return true
+  if (!movieId) return false
+  return !!userSubscription.value?.movies?.[movieId]
 }
 
 let unsubFn: (() => void) | null = null

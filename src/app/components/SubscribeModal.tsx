@@ -13,6 +13,7 @@ import {
   pesapalGetStatus,
 } from '../lib/pesapal'
 import './SubscribeModal.css'
+import { subscribeMovie } from '../store/ui'
 
 interface ModalPlan {
   id: string; name: string; duration: string; price: number; days: number; popular: boolean
@@ -69,14 +70,11 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
   const authToken = useRef('')
   const trackingId = useRef('')
 
-  const PLANS: ModalPlan[] = plansDb.length === 0 ? FALLBACK_PLANS : plansDb.map((p, i) => ({
-    id: p.key,
-    name: p.name,
-    duration: fmtDuration(p.durationDays),
-    price: p.price,
-    days: p.durationDays,
-    popular: i === Math.floor(plansDb.length / 2),
-  }))
+  const movieTarget = useV(() => subscribeMovie.value)
+  const PLANS: ModalPlan[] = [
+    ...(movieTarget ? [{ id: 'movie:' + movieTarget.id, name: movieTarget.title, duration: 'This title only', price: 10000, days: 0, popular: false }] : []),
+    { id: 'all', name: 'All Access', duration: 'All movies & series · 30 Days', price: 50000, days: 30, popular: true },
+  ]
 
   const activePlan = PLANS.find(p => p.id === selectedPlanId)
 
@@ -102,13 +100,14 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
 
   useEffect(() => {
     if (!open) { stopPolling(); resetToPlans(); return }
-    if (!loadingSub && subscribed) { setStep('active'); return }
+    if (!open) return
+    if (!loadingSub && subscribed && !subscribeMovie.value) { setStep('active'); return }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open])
 
   // If sub resolves to subscribed while modal already open and loading
   useEffect(() => {
-    if (open && !loadingSub && subscribed && step === 'plans') {
+    if (open && !loadingSub && subscribed && !subscribeMovie.value && step === 'plans') {
       setStep('active')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
