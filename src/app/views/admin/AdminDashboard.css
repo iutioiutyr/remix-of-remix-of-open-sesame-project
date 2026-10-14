@@ -1,4 +1,4 @@
-@scope (.vjs-AdminDashboard) {
+
 .admin-wrap { min-height: 100vh; background: #050c08; display: flex; flex-direction: column; }
 
 .admin-topnav { display: none; }
@@ -101,4 +101,4 @@
 }
 .amob-icon { display: flex; align-items: center; flex-shrink: 0; }
 .amob-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; color: inherit; }
-}
+

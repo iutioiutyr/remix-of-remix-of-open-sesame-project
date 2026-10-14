@@ -1,4 +1,4 @@
-@scope (.vjs-AdminSubscriptionPlansTab) {
+
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .tab-page { padding: 28px 24px; position: relative; min-height: 300px; }
@@ -84,4 +84,4 @@
 
 .toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: rgba(0,20,12,0.95); border: 1px solid rgba(255,77,184,0.3); color: #ff4db8; padding: 12px 24px; border-radius: 10px; font-size: 0.85rem; font-weight: 600; z-index: 9999; backdrop-filter: blur(12px); white-space: nowrap; box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
 @media (min-width: 1024px) { .toast { bottom: 28px; } }
-}
+

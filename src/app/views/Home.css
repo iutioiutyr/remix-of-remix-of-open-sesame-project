@@ -1,4 +1,4 @@
-@scope (.vjs-Home) {
+
   /* Mobile search bar — shown only below 640px */
   .mobile-search-bar { display: block; padding: 8px 10px 4px; }
   @media (min-width: 640px) { .mobile-search-bar { display: none; } }
@@ -107,4 +107,4 @@
   .hero-fade-enter-active, .hero-fade-leave-active { transition: opacity 0.45s ease, transform 0.45s ease; }
   .hero-fade-enter-from { opacity: 0; transform: translateY(16px); }
   .hero-fade-leave-to { opacity: 0; transform: translateY(-10px); }
-}
+

@@ -1,4 +1,4 @@
-@scope (.vjs-AppHeader) {
+
 .header-bar {
   width: 100%;
   max-width: 100%;
@@ -173,4 +173,4 @@
 .mob-nav-item--admin.mob-nav-item--active { color: #ffa600; }
 .mob-nav-icon { width: 20px; height: 20px; flex-shrink: 0; }
 .mob-nav-label { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
-}
+
