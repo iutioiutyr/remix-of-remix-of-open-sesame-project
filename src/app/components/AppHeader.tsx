@@ -22,7 +22,7 @@ export default function AppHeader() {
 
   const userInitial = (() => {
     const name = currentUserV?.displayName || currentUserV?.email || '?'
-    return name[0].toUpperCase()
+    return (name[0] ?? '?').toUpperCase()
   })()
 
   const userName = (() => {
