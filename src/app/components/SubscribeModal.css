@@ -1,4 +1,4 @@
-@scope (.vjs-SubscribeModal) {
+
   .modal-backdrop {
     position: fixed; inset: 0; z-index: 300;
     display: flex; align-items: center; justify-content: center; padding: 16px;
@@ -202,4 +202,4 @@
   .modal-enter-active .modal-box, .modal-leave-active .modal-box { transition: transform 0.2s ease; }
   .modal-enter-from .modal-box { transform: scale(0.96) translateY(8px); }
   .modal-leave-to .modal-box { transform: scale(0.98) translateY(5px); }
-}
+

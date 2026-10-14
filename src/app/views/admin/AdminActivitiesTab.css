@@ -1,4 +1,4 @@
-@scope (.vjs-AdminActivitiesTab) {
+
 .tab-page { padding: 20px 14px 32px; }
 @media (min-width: 640px)  { .tab-page { padding: 24px 20px 36px; } }
 @media (min-width: 1024px) { .tab-page { padding: 28px 28px 40px; } }
@@ -71,4 +71,4 @@
 .uc-label { font-size: 0.6rem; color: rgba(255,255,255,0.3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
 .uc-breakdown { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; margin-top: 2px; }
 .mini-badge { font-size: 0.58rem; font-weight: 700; padding: 1px 6px; border-radius: 4px; }
-}
+

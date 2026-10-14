@@ -1,4 +1,4 @@
-@scope (.vjs-AppFooter) {
+
   .footer-root {
     width: 100%;
     border-top: 1px solid rgba(255,255,255,0.06);
@@ -93,4 +93,4 @@
       padding-bottom: calc(60px + env(safe-area-inset-bottom));
     }
   }
-}
+

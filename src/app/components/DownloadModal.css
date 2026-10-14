@@ -1,4 +1,4 @@
-@scope (.vjs-DownloadModal) {
+
   .modal-backdrop {
     position: fixed; inset: 0; z-index: 200;
     display: flex; align-items: center; justify-content: center; padding: 16px;
@@ -192,4 +192,4 @@
   .viewer-enter-active .viewer-modal, .viewer-leave-active .viewer-modal { transition: transform 0.22s ease; }
   .viewer-enter-from .viewer-modal { transform: scale(0.95) translateY(10px); }
   .viewer-leave-to .viewer-modal { transform: scale(0.97) translateY(6px); }
-}
+

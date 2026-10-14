@@ -1,4 +1,4 @@
-@scope (.vjs-AdminMusicTab) {
+
 .tab-page { padding: 28px 24px; }
 .tab-header { margin-bottom: 20px; }
 .tab-title { font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 4px; }
@@ -33,4 +33,4 @@
 .ic-btn-del { width: 100%; padding: 5px 10px; background: rgba(220,38,38,0.1); border: 1px solid rgba(220,38,38,0.25); color: #f87171; border-radius: 6px; font-size: 0.68rem; font-weight: 700; cursor: pointer; }
 .empty { text-align: center; color: rgba(255,255,255,0.25); padding: 40px; grid-column: 1/-1; }
 @media (max-width: 640px) { .tab-page { padding: 16px 12px; } .form-grid { grid-template-columns: 1fr; } .col-2 { grid-column: span 1; } }
-}
+

@@ -1,4 +1,4 @@
-@scope (.vjs-AdminMoviesTab) {
+
 .tab-page { padding: 28px 24px; }
 .tab-header { margin-bottom: 20px; }
 .tab-title { font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 4px; }
@@ -77,4 +77,4 @@
   .mc-body { padding: 8px 10px; }
   .mc-title { font-size: 0.78rem; }
 }
-}
+

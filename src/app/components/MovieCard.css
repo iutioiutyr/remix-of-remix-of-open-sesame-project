@@ -1,4 +1,4 @@
-@scope (.vjs-MovieCard) {
+
   .poster-card { cursor: pointer; display: flex; flex-direction: column; gap: 5px; width: 100%; min-width: 0; overflow: hidden; box-sizing: border-box; }
 
   .poster-art {
@@ -54,4 +54,4 @@
     box-shadow: 0 4px 14px rgba(220,0,0,0.35); transition: filter 0.15s;
   }
   .poster-dl-btn:hover { filter: brightness(1.07); }
-}
+

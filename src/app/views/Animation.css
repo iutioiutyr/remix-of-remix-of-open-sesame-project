@@ -1,4 +1,4 @@
-@scope (.vjs-Animation) {
+
   .page-main { min-height: 80vh; width: 100%; max-width: 100%; overflow-x: hidden; box-sizing: border-box; }
   .page-banner { display: none; }
   @media (min-width: 640px) { .page-banner { position: relative; height: 220px; display: flex; align-items: flex-end; overflow: hidden; } }
@@ -30,4 +30,4 @@
   @media (min-width: 1024px) { .poster-grid { grid-template-columns: repeat(6, 1fr); gap: 13px; } }
   @media (min-width: 1280px) { .poster-grid { grid-template-columns: repeat(7, 1fr); gap: 14px; } }
   .poster-grid > * { min-width: 0; width: 100%; box-sizing: border-box; }
-}
+

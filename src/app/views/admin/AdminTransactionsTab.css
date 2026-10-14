@@ -1,4 +1,4 @@
-@scope (.vjs-AdminTransactionsTab) {
+
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .tab-page { padding: 12px 10px 16px; width: 100%; box-sizing: border-box; overflow-x: hidden; }
@@ -88,4 +88,4 @@
 .status-pending .status-dot { background: #f59e0b; }
 .del-btn { display: flex; align-items: center; gap: 5px; padding: 5px 10px; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.2); border-radius: 7px; color: #f87171; font-size: 0.68rem; font-weight: 600; cursor: pointer; }
 .del-btn:hover { background: rgba(220,38,38,0.18); }
-}
+

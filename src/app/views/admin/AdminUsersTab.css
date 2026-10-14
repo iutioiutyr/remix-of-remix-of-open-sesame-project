@@ -1,4 +1,4 @@
-@scope (.vjs-AdminUsersTab) {
+
   @keyframes spin { to { transform: rotate(360deg); } }
   .tab-page { padding: 28px 24px; position: relative; }
   .tab-header { margin-bottom: 18px; }
@@ -66,4 +66,4 @@
     .sub-btn-price { font-size: 0.58rem; }
     .user-meta { gap: 16px; margin-bottom: 8px; }
   }
-}
+
