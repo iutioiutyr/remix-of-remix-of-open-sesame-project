@@ -44,8 +44,8 @@ export default function Home() {
         title: s.title,
         type: s.subtitle || 'STREAMING',
         imageUrl: s.imageUrl || '',
-        bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #0d2a4a 0%, #071220 60%, #050c08 100%)',
-        accent: '#00d9a3',
+        bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #0d2a4a 0%, #071220 60%, #05070d 100%)',
+        accent: '#3b9cff',
       })),
     [carousel],
   )
@@ -122,7 +122,7 @@ export default function Home() {
                 <div key={currentSlide} className="hero-text-block">
                   <p
                     className="hero-category"
-                    style={{ color: heroSlides[currentSlide]?.accent || '#00d9a3' }}
+                    style={{ color: heroSlides[currentSlide]?.accent || '#3b9cff' }}
                   >
                     {heroSlides[currentSlide]?.type || ''}
                   </p>

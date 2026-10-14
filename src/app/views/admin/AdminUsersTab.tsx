@@ -30,7 +30,7 @@ const FALLBACK_PLANS = [
   { key: 'fb-1m', durationDays: 30, name: '1 Month Pass', price: 0 },
 ];
 
-const PLAN_COLORS = ['#16a34a', '#2563eb', '#7c3aed', '#0891b2', '#db2777', '#ea580c', '#0d9488', '#9333ea'];
+const PLAN_COLORS = ['#2b7fe0', '#2563eb', '#7c3aed', '#0891b2', '#db2777', '#ea580c', '#0d9488', '#9333ea'];
 function planColor(idx: number) {
   return PLAN_COLORS[idx % PLAN_COLORS.length];
 }
@@ -185,7 +185,7 @@ export default function AdminUsersTab() {
             Total: {users.length}
           </span>
           <span className="hstat green">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00d9a3" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3b9cff" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
             Active: {activeCount}
           </span>
           <button className="refresh-btn" onClick={loadUsers} disabled={loading}>

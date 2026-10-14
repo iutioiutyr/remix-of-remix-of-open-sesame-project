@@ -33,7 +33,7 @@ export default function Animation() {
         className="page-banner"
         style={{
           background:
-            'radial-gradient(ellipse 100% 80% at 60% 0%, #1a0a3a 0%, #0f0620 50%, #050c08 100%)',
+            'radial-gradient(ellipse 100% 80% at 60% 0%, #1a0a3a 0%, #0f0620 50%, #05070d 100%)',
         }}
       >
         <div className="page-banner-overlay"></div>

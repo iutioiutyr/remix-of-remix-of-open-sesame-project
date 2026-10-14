@@ -11,7 +11,7 @@
 .field label { font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-transform: uppercase; }
 .req { color: #f87171; }
 .field input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 9px 12px; color: #fff; font-size: 0.85rem; outline: none; }
-.field input:focus { border-color: rgba(0,217,163,0.4); }
+.field input:focus { border-color: rgba(59,156,255,0.4); }
 .field input::placeholder { color: rgba(255,255,255,0.25); }
 .select-wrap { position: relative; }
 .select-wrap select { width: 100%; appearance: none; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 9px 36px 9px 12px; color: rgba(255,255,255,0.8); font-size: 0.85rem; outline: none; cursor: pointer; }
@@ -20,7 +20,7 @@
 .btn-add { width: 100%; padding: 11px; background: #7c3aed; border: none; border-radius: 10px; color: #fff; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: filter 0.2s; }
 .btn-add:hover:not(:disabled) { filter: brightness(1.12); }
 .btn-add:disabled { opacity: 0.4; cursor: not-allowed; }
-.save-msg { color: #00d9a3; font-size: 0.78rem; font-weight: 600; margin-top: 10px; text-align: center; }
+.save-msg { color: #3b9cff; font-size: 0.78rem; font-weight: 600; margin-top: 10px; text-align: center; }
 .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
 .item-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; overflow: hidden; }
 .ic-poster { position: relative; aspect-ratio: 1; background: rgba(255,255,255,0.04); overflow: hidden; }

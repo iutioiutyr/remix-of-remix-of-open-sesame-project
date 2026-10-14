@@ -33,7 +33,7 @@ export default function Movies() {
         className="page-banner"
         style={{
           background:
-            'radial-gradient(ellipse 100% 80% at 60% 0%, #0d2a4a 0%, #071220 50%, #050c08 100%)',
+            'radial-gradient(ellipse 100% 80% at 60% 0%, #0d2a4a 0%, #071220 50%, #05070d 100%)',
         }}
       >
         <div className="page-banner-overlay"></div>

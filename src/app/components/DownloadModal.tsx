@@ -63,7 +63,7 @@ export default function DownloadModal({ movie, onClose }: DownloadModalProps) {
     : movie.episodes.find(ep => ep.episodeNumber === selectedEpNum) ?? null
 
   const posterThumbStyle = movie
-    ? { background: `linear-gradient(160deg, ${movie.color || '#0d2035'} 0%, #050c08 100%)` }
+    ? { background: `linear-gradient(160deg, ${movie.color || '#0d2035'} 0%, #05070d 100%)` }
     : {}
 
   // ── Embedded viewer ────────────────────────────────────────────
@@ -142,7 +142,7 @@ export default function DownloadModal({ movie, onClose }: DownloadModalProps) {
               {movie.image ? (
                 <img src={movie.image} alt="" className="thumb-img" />
               ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(0,217,163,0.7)"><path d="M8 5v14l11-7z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(59,156,255,0.7)"><path d="M8 5v14l11-7z"/></svg>
               )}
             </div>
             <div className="modal-info">
@@ -278,7 +278,7 @@ export default function DownloadModal({ movie, onClose }: DownloadModalProps) {
           <div className="viewer-modal">
             <div className="viewer-bar">
               <div className="viewer-bar-left">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(0,217,163,0.8)" strokeWidth="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(59,156,255,0.8)" strokeWidth="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 <span className="viewer-title">{viewerTitle}</span>
               </div>
               <div className="viewer-bar-actions">

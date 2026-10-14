@@ -31,7 +31,7 @@
 
   .poster-top { position: absolute; top: 6px; left: 6px; right: 6px; display: flex; align-items: center; gap: 3px; flex-wrap: wrap; z-index: 2; }
   .poster-badge { font-size: 0.55rem; font-weight: 800; letter-spacing: 0.06em; padding: 2px 6px; border-radius: 3px; text-transform: uppercase; line-height: 1.4; }
-  .badge-movie  { background: rgba(0,0,0,0.6); color: #00d9a3; border: 1px solid rgba(0,217,163,0.3); }
+  .badge-movie  { background: rgba(0,0,0,0.6); color: #3b9cff; border: 1px solid rgba(59,156,255,0.3); }
   .badge-series { background: rgba(0,0,0,0.6); color: #ffa600; border: 1px solid rgba(255,166,0,0.3); }
   .badge-anim   { background: rgba(0,0,0,0.6); color: #d08aff; border: 1px solid rgba(208,138,255,0.3); }
   .badge-hot    { background: rgba(220,38,38,0.85); color: #fff; border: 1px solid rgba(255,80,80,0.3); }
@@ -48,10 +48,14 @@
   .poster-type { font-size: 0.6rem; color: rgba(255,255,255,0.36); font-weight: 500; margin-bottom: 3px; }
   .poster-dl-btn {
     width: 100%; padding: 6px 0; border-radius: 7px; border: none;
-    background: linear-gradient(135deg, #22c55e, #00d9a3);
-    color: #00140a; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.1em;
+    background: linear-gradient(135deg, #ffd000, #ff8a00, #e85d00);
+    color: #2a1400; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.1em;
     cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;
-    box-shadow: 0 4px 14px rgba(34,197,94,0.4); transition: filter 0.15s;
+    box-shadow: 0 4px 14px rgba(255,138,0,0.4); transition: filter 0.15s;
   }
   .poster-dl-btn:hover { filter: brightness(1.07); }
 
+.poster-card { height: 100%; }
+.poster-info { flex: 1; }
+.poster-title { white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+.poster-dl-btn { margin-top: auto; }

@@ -22,7 +22,7 @@ setPersistence(auth, browserLocalPersistence).catch(() =>
   )
 )
 
-const ADMIN_EMAIL = 'wanifred03@gmail.com'
+const ADMIN_EMAIL = 'rubangakenerobinson96@gmail.com'
 
 export const currentUser = ref<User | null>(null)
 export const authLoading = ref(true)

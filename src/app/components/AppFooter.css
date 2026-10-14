@@ -5,8 +5,8 @@
   }
   .care-banner {
     width: 100%;
-    background: linear-gradient(90deg, rgba(0,217,163,0.07) 0%, rgba(255,215,0,0.05) 100%);
-    border-bottom: 1px solid rgba(0,217,163,0.12);
+    background: linear-gradient(90deg, rgba(59,156,255,0.07) 0%, rgba(255,215,0,0.05) 100%);
+    border-bottom: 1px solid rgba(59,156,255,0.12);
   }
   .care-inner {
     display: flex;
@@ -24,14 +24,14 @@
   }
   .care-icon {
     width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
-    background: rgba(0,217,163,0.12);
-    border: 1px solid rgba(0,217,163,0.2);
+    background: rgba(59,156,255,0.12);
+    border: 1px solid rgba(59,156,255,0.2);
     display: flex; align-items: center; justify-content: center;
-    color: #00d9a3;
+    color: #3b9cff;
   }
   .care-label {
     font-size: 0.62rem; font-weight: 800; letter-spacing: 0.14em;
-    color: rgba(0,217,163,0.8); text-transform: uppercase; margin-bottom: 2px;
+    color: rgba(59,156,255,0.8); text-transform: uppercase; margin-bottom: 2px;
   }
   .care-desc { font-size: 0.7rem; color: rgba(255,255,255,0.45); }
 
@@ -58,7 +58,7 @@
     font-size: clamp(0.9rem, 2.8vw, 1.35rem);
     font-weight: 900;
     letter-spacing: 0.04em;
-    background: linear-gradient(135deg, #00d9a3, #00b4d8, #4dd0ff);
+    background: linear-gradient(135deg, #3b9cff, #00b4d8, #4dd0ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -66,7 +66,7 @@
   .care-divider {
     width: 100%;
     height: 1px;
-    background: rgba(0,217,163,0.15);
+    background: rgba(59,156,255,0.15);
     margin: 2px 0;
   }
 
@@ -81,7 +81,7 @@
     .care-phones {
       align-items: flex-start;
       width: 100%;
-      border-top: 1px solid rgba(0,217,163,0.12);
+      border-top: 1px solid rgba(59,156,255,0.12);
       padding-top: 12px;
     }
     .care-phone { padding: 10px 0; }
