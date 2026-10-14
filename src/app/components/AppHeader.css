@@ -174,3 +174,22 @@
 .mob-nav-icon { width: 20px; height: 20px; flex-shrink: 0; }
 .mob-nav-label { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 
+
+/* ---- LUO NIGER header redesign ---- */
+.vjs-AppHeader .header-bar {
+  background: linear-gradient(180deg, rgba(10,6,2,0.92), rgba(10,6,2,0.78));
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, #ffb300 30%, #ff6a00 70%, transparent) 1;
+  box-shadow: 0 6px 24px -12px rgba(255,140,0,0.35);
+}
+@media (min-width: 480px) { .vjs-AppHeader .header-inner { height: 60px; padding: 0 18px; } }
+.vjs-AppHeader .brand-logo { height: 22px; }
+@media (min-width: 480px) { .vjs-AppHeader .brand-logo { height: 28px; } }
+.vjs-AppHeader .nav-pill { gap: 2px; padding: 4px; border-radius: 9999px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,179,0,0.15); }
+.vjs-AppHeader .nav-item { border: 1px solid transparent; border-radius: 9999px; padding: 6px 14px; color: rgba(255,240,220,0.6); }
+.vjs-AppHeader .nav-item:hover { color: #ffd27a; background: rgba(255,179,0,0.08); }
+.vjs-AppHeader .nav-item--active { color: #1a0d00; background: linear-gradient(135deg, #ffd000, #ff7a00); border-color: transparent; box-shadow: 0 4px 14px -4px rgba(255,140,0,0.6); }
+.vjs-AppHeader .hs-btn { background: linear-gradient(135deg, #ffd000, #ff7a00); }
+.vjs-AppHeader .header-search:focus-within { border-color: rgba(255,179,0,0.45); box-shadow: 0 0 0 3px rgba(255,179,0,0.1); }
+.mobile-bottom-nav.vjs-AppHeader { background: rgba(10,6,2,0.95); border-top: 1px solid rgba(255,179,0,0.25); }
+.vjs-AppHeader .mob-nav-item--active { color: #ffb300; }

@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AnimationRouteImport } from './routes/animation'
 import { Route as MoviesRouteImport } from './routes/movies'
+import { Route as MusicRouteImport } from './routes/music'
 import { Route as SeriesRouteImport } from './routes/series'
 import { Route as ApiPublicPesapalSplatRouteImport } from './routes/api/public/pesapal/$'
 
@@ -36,6 +37,11 @@ const MoviesRoute = MoviesRouteImport.update({
   path: '/movies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MusicRoute = MusicRouteImport.update({
+  id: '/music',
+  path: '/music',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SeriesRoute = SeriesRouteImport.update({
   id: '/series',
   path: '/series',
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/animation': typeof AnimationRoute
   '/movies': typeof MoviesRoute
+  '/music': typeof MusicRoute
   '/series': typeof SeriesRoute
   '/api/public/pesapal/$': typeof ApiPublicPesapalSplatRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminRoute
   '/animation': typeof AnimationRoute
   '/movies': typeof MoviesRoute
+  '/music': typeof MusicRoute
   '/series': typeof SeriesRoute
   '/api/public/pesapal/$': typeof ApiPublicPesapalSplatRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/animation': typeof AnimationRoute
   '/movies': typeof MoviesRoute
+  '/music': typeof MusicRoute
   '/series': typeof SeriesRoute
   '/api/public/pesapal/$': typeof ApiPublicPesapalSplatRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/animation'
     | '/movies'
+    | '/music'
     | '/series'
     | '/api/public/pesapal/$'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/animation'
     | '/movies'
+    | '/music'
     | '/series'
     | '/api/public/pesapal/$'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/animation'
     | '/movies'
+    | '/music'
     | '/series'
     | '/api/public/pesapal/$'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   AnimationRoute: typeof AnimationRoute
   MoviesRoute: typeof MoviesRoute
+  MusicRoute: typeof MusicRoute
   SeriesRoute: typeof SeriesRoute
   ApiPublicPesapalSplatRoute: typeof ApiPublicPesapalSplatRoute
 }
@@ -138,6 +151,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MoviesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/music': {
+      id: '/music'
+      path: '/music'
+      fullPath: '/music'
+      preLoaderRoute: typeof MusicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/series': {
       id: '/series'
       path: '/series'
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRoute,
   AnimationRoute: AnimationRoute,
   MoviesRoute: MoviesRoute,
+  MusicRoute: MusicRoute,
   SeriesRoute: SeriesRoute,
   ApiPublicPesapalSplatRoute: ApiPublicPesapalSplatRoute,
 }

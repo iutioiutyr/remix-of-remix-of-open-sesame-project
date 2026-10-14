@@ -130,7 +130,7 @@ export async function pesapalSubmitOrder(
     cancellationUrl: string
   }
 ): Promise<PesapalOrder> {
-  const merchantReference = `VJONEFLEX-${Date.now()}-${Math.random().toString(36).substring(2, 7).toUpperCase()}`
+  const merchantReference = `LUONIGER-${Date.now()}-${Math.random().toString(36).substring(2, 7).toUpperCase()}`
   const data = await requestPesapalJson(`${BASE}/api/Transactions/SubmitOrderRequest`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: `Bearer ${token}` },
