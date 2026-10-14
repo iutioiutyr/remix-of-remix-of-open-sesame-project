@@ -9,7 +9,13 @@ import {
 } from "@tanstack/react-router";
 import { lazy, Suspense, useEffect, useState, type ReactNode } from "react";
 
-const AppShell = lazy(() => import("../app/App"));
+const AppShell = lazy(async () => {
+  try {
+    const res = await fetch("/api/public/firebase-config");
+    (globalThis as any).__FB_CONFIG = await res.json();
+  } catch {}
+  return import("../app/App");
+});
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
