@@ -292,7 +292,7 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
             <div className="modal-header-row">
               <img src="/logo.png" alt="" className="hdr-logo" />
               <div>
-                <h2 className="hdr-title">Subscribe to Download</h2>
+                <h2 className="hdr-title">Choose how to pay</h2>
                 <p className="hdr-sub">Unlimited HD downloads · Powered by PesaPal</p>
               </div>
             </div>
@@ -307,7 +307,7 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
                   </div>
                   <p className="plan-period">{plan.duration}</p>
                   <p className="plan-feature">Unlimited Downloads</p>
-                  <button className="plan-sub-btn" onClick={() => pickPlan(plan.id)}>Subscribe to Download</button>
+                  <button className="plan-sub-btn" onClick={() => pickPlan(plan.id)}>Pay Now</button>
                 </div>
               ))}
             </div>
