@@ -6,7 +6,7 @@
   }
   .modal-box {
     width: 100%; max-width: 380px; border-radius: 22px;
-    border: 1px solid rgba(255,255,255,0.1); background: rgba(8,16,12,0.98);
+    border: 1px solid rgba(255,255,255,0.1); background: rgba(8,10,18,0.98);
     padding: 20px; box-shadow: 0 32px 70px rgba(0,0,0,0.6);
     max-height: 90vh; overflow-y: auto;
   }
@@ -111,7 +111,7 @@
     width: 100%; max-width: 360px;
     height: min(72vh, 420px);
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.1); background: rgba(8,16,12,0.98);
+    border: 1px solid rgba(255,255,255,0.1); background: rgba(8,10,18,0.98);
     box-shadow: 0 32px 70px rgba(0,0,0,0.65);
     display: flex; flex-direction: column; overflow: hidden;
   }
@@ -157,7 +157,7 @@
   .iframe-loading-overlay {
     position: absolute; inset: 0; z-index: 3;
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
-    background: rgba(8,16,12,0.97);
+    background: rgba(8,10,18,0.97);
   }
   .iframe-loading-spinner {
     width: 36px; height: 36px; border-radius: 50%;
@@ -172,7 +172,7 @@
   .viewer-loading {
     position: absolute; inset: 0; z-index: 2;
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-    background: rgba(8,16,12,0.98); color: rgba(255,255,255,0.4); font-size: 0.8rem;
+    background: rgba(8,10,18,0.98); color: rgba(255,255,255,0.4); font-size: 0.8rem;
   }
   .viewer-loading-hint { font-size: 0.65rem; color: rgba(255,255,255,0.22); text-align: center; max-width: 260px; line-height: 1.5; }
   .viewer-spinner {

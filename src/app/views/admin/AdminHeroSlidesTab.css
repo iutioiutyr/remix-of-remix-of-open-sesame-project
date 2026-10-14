@@ -38,7 +38,7 @@
   .slides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
   .slide-card { border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
   .slide-bg { position: relative; height: 140px; }
-  .slide-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(5,12,8,0.8) 0%, transparent 100%); }
+  .slide-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(5,7,13,0.8) 0%, transparent 100%); }
   .slide-content { position: absolute; bottom: 16px; left: 16px; right: 16px; }
   .slide-type { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 4px; }
   .slide-title { font-size: 1rem; font-weight: 800; color: #fff; }

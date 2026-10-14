@@ -3,7 +3,7 @@
   .page-banner { display: none; }
   @media (min-width: 640px) { .page-banner { position: relative; height: 220px; display: flex; align-items: flex-end; overflow: hidden; } }
   @media (min-width: 768px) { .page-banner { height: 250px; } }
-  .page-banner-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,12,8,1) 0%, transparent 60%); }
+  .page-banner-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,7,13,1) 0%, transparent 60%); }
   .page-banner-content { position: relative; z-index: 10; width: 100%; padding: 0 16px 28px; }
   .section-kicker { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; color: rgba(59,156,255,0.7); text-transform: uppercase; }
   .page-title { font-size: clamp(1.4rem, 5vw, 3rem); font-weight: 800; color: #fff; letter-spacing: -0.01em; margin-bottom: 4px; }

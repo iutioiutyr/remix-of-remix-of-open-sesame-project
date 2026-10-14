@@ -77,7 +77,7 @@
 
 .admin-mob-nav {
   display: flex; align-items: stretch; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-  height: 62px; background: rgba(5,10,7,0.97); backdrop-filter: blur(20px);
+  height: 62px; background: rgba(5,7,13,0.97); backdrop-filter: blur(20px);
   border-top: 1px solid rgba(255,255,255,0.09);
   padding-bottom: env(safe-area-inset-bottom);
   overflow-x: auto; overflow-y: hidden;

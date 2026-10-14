@@ -20,7 +20,7 @@
 
   --bg:            #05070d;
   --bg-header:     rgba(0,0,0,0.72);
-  --bg-nav:        rgba(5,10,7,0.96);
+  --bg-nav:        rgba(5,7,13,0.96);
   --bg-card:       rgba(255,255,255,0.04);
   --bg-card-hover: rgba(255,255,255,0.07);
   --border:        rgba(255,255,255,0.08);
@@ -214,10 +214,10 @@ body {
 .card-dl-btn {
   width: 100%;
   padding: 7px 0;
-  background: linear-gradient(135deg, #ff1a1a, #cc0000);
+  background: linear-gradient(135deg, #ffd000, #ff8a00, #e85d00);
   border: none;
   border-radius: 8px;
-  color: #ffffff;
+  color: #2a1400;
   font-size: 11px;
   font-weight: 700;
   cursor: pointer;
