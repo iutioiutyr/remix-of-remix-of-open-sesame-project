@@ -13,6 +13,7 @@ import {
   pesapalGetStatus,
 } from '../lib/pesapal'
 import './SubscribeModal.css'
+import { subscribeMovie } from '../store/ui'
 
 interface ModalPlan {
   id: string; name: string; duration: string; price: number; days: number; popular: boolean
@@ -69,14 +70,11 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
   const authToken = useRef('')
   const trackingId = useRef('')
 
-  const PLANS: ModalPlan[] = plansDb.length === 0 ? FALLBACK_PLANS : plansDb.map((p, i) => ({
-    id: p.key,
-    name: p.name,
-    duration: fmtDuration(p.durationDays),
-    price: p.price,
-    days: p.durationDays,
-    popular: i === Math.floor(plansDb.length / 2),
-  }))
+  const movieTarget = useV(() => subscribeMovie.value)
+  const PLANS: ModalPlan[] = [
+    ...(movieTarget ? [{ id: 'movie:' + movieTarget.id, name: movieTarget.title, duration: 'This title only', price: 10000, days: 0, popular: false }] : []),
+    { id: 'all', name: 'All Access', duration: 'All movies & series · 30 Days', price: 50000, days: 30, popular: true },
+  ]
 
   const activePlan = PLANS.find(p => p.id === selectedPlanId)
 
@@ -102,13 +100,14 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
 
   useEffect(() => {
     if (!open) { stopPolling(); resetToPlans(); return }
-    if (!loadingSub && subscribed) { setStep('active'); return }
+    if (!open) return
+    if (!loadingSub && subscribed && !subscribeMovie.value) { setStep('active'); return }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open])
 
   // If sub resolves to subscribed while modal already open and loading
   useEffect(() => {
-    if (open && !loadingSub && subscribed && step === 'plans') {
+    if (open && !loadingSub && subscribed && !subscribeMovie.value && step === 'plans') {
       setStep('active')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -270,7 +269,7 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
         {step === 'active' && (
           <div className="center-state">
             <div className="success-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff4db8" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00d9a3" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h2 className="hdr-title mt-3">You're Subscribed!</h2>
             <p className="center-sub mt-1">Your subscription is active.</p>
@@ -293,7 +292,7 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
             <div className="modal-header-row">
               <img src="/logo.png" alt="" className="hdr-logo" />
               <div>
-                <h2 className="hdr-title">Subscribe to Download</h2>
+                <h2 className="hdr-title">Choose how to pay</h2>
                 <p className="hdr-sub">Unlimited HD downloads · Powered by PesaPal</p>
               </div>
             </div>
@@ -308,7 +307,7 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
                   </div>
                   <p className="plan-period">{plan.duration}</p>
                   <p className="plan-feature">Unlimited Downloads</p>
-                  <button className="plan-sub-btn" onClick={() => pickPlan(plan.id)}>Subscribe to Download</button>
+                  <button className="plan-sub-btn" onClick={() => pickPlan(plan.id)}>Pay Now</button>
                 </div>
               ))}
             </div>
@@ -386,7 +385,7 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
         {step === 'success' && (
           <div className="center-state">
             <div className="success-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff4db8" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00d9a3" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h2 className="hdr-title mt-3">Payment Successful!</h2>
             <p className="center-sub mt-1">Your subscription is now active. Enjoy unlimited downloads!</p>

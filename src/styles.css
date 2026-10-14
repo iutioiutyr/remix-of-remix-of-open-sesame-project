@@ -5,7 +5,7 @@
 @theme inline {
   --color-background: var(--bg);
   --color-foreground: var(--text);
-  --color-primary: #ff4db8;
+  --color-primary: #00d9a3;
   --color-primary-foreground: #ffffff;
   --color-muted-foreground: var(--text-dim);
   --color-border: var(--border);
@@ -99,17 +99,17 @@ body {
   gap: 6px;
   border-radius: 9999px;
   border: 1px solid rgba(255,255,255,0.1);
-  background: linear-gradient(135deg, #ff4db8 0%, #ff8c00 48%, #ffd700 100%);
-  color: #1a0010;
+  background: linear-gradient(135deg, #00d9a3 0%, #00b4d8 48%, #4dd0ff 100%);
+  color: #001a14;
   font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
   transition: box-shadow 0.2s, filter 0.2s;
-  box-shadow: 0 14px 34px rgba(255,77,184,0.22);
+  box-shadow: 0 14px 34px rgba(0,217,163,0.22);
 }
 .button-primary:hover {
   filter: brightness(1.06);
-  box-shadow: 0 18px 42px rgba(255,77,184,0.3);
+  box-shadow: 0 18px 42px rgba(0,217,163,0.3);
 }
 
 .button-secondary {
@@ -159,8 +159,8 @@ body {
 }
 .input-shell:focus {
   background: rgba(255,255,255,0.07);
-  border-color: rgba(255,77,184,0.4);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 0 0 3px rgba(255,77,184,0.08), 0 2px 24px rgba(0,0,0,0.2);
+  border-color: rgba(0,217,163,0.4);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 0 0 3px rgba(0,217,163,0.08), 0 2px 24px rgba(0,0,0,0.2);
   outline: none;
 }
 
@@ -189,15 +189,15 @@ body {
 }
 .movie-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255,77,184,0.22);
+  border-color: rgba(0,217,163,0.22);
   box-shadow: 0 14px 36px rgba(0,0,0,0.3);
 }
 
 /* Type badges */
 .badge-movie {
-  background: rgba(255,77,184,0.12);
-  color: #ff4db8;
-  border: 1px solid rgba(255,77,184,0.25);
+  background: rgba(0,217,163,0.12);
+  color: #00d9a3;
+  border: 1px solid rgba(0,217,163,0.25);
 }
 .badge-series {
   background: rgba(255,166,0,0.12);
@@ -257,7 +257,7 @@ body {
 .nav-link:hover,
 .nav-link.active {
   color: #fff;
-  border-color: #ff4db8;
+  border-color: #00d9a3;
 }
 
 /* FAQ accordion */
@@ -297,7 +297,7 @@ body {
 .loading-dots { display: flex; gap: 6px; align-items: center; }
 .loading-dots span {
   width: 7px; height: 7px; border-radius: 50%;
-  background: rgba(255,77,184,0.5);
+  background: rgba(0,217,163,0.5);
   animation: dot-pulse 1.2s ease-in-out infinite;
 }
 .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
@@ -359,7 +359,7 @@ body {
 [data-theme="light"] .nav-item { color: var(--text-dim) !important; }
 [data-theme="light"] .nav-item:hover { color: var(--text) !important; }
 [data-theme="light"] .mob-nav-item { color: var(--text-muted) !important; }
-[data-theme="light"] .mob-nav-item--active { color: #ff4db8 !important; }
+[data-theme="light"] .mob-nav-item--active { color: #00d9a3 !important; }
 [data-theme="light"] .topnav-item { color: var(--text-dim) !important; }
 [data-theme="light"] .mob-back-link { color: var(--text-dim) !important; }
 

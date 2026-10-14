@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { Movie } from '../data/movies'
 import { useAuth } from '../store/auth'
-import { isSubscribed } from '../store/subscription'
-import { loginOpen, subscribeOpen } from '../store/ui'
+import { isSubscribed, hasMovieAccess, userSubscription } from '../store/subscription'
+import { loginOpen, subscribeOpen, subscribeMovie } from '../store/ui'
 import { toDirectDownload } from '../lib/utils'
 import { logActivity } from '../lib/logActivity'
 import { useV } from '../reactive'
@@ -22,10 +22,12 @@ const isIOS = typeof navigator !== 'undefined' && (
 export default function DownloadModal({ movie, onClose }: DownloadModalProps) {
   const { isLoggedIn } = useAuth()
   const loggedIn = useV(() => isLoggedIn.value)
-  const subscribed = useV(() => isSubscribed.value)
+  useV(() => isSubscribed.value)
+  useV(() => userSubscription.value)
+  const subscribed = hasMovieAccess(movie ? String(movie.id) : undefined)
 
   function openLogin() { loginOpen.value = true }
-  function openSubscribe() { subscribeOpen.value = true }
+  function openSubscribe() { subscribeMovie.value = movie ? { id: String(movie.id), title: movie.title } : null; subscribeOpen.value = true }
 
   const [selectedEpNum, setSelectedEpNum] = useState<number | null>(null)
 
@@ -140,7 +142,7 @@ export default function DownloadModal({ movie, onClose }: DownloadModalProps) {
               {movie.image ? (
                 <img src={movie.image} alt="" className="thumb-img" />
               ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,77,184,0.7)"><path d="M8 5v14l11-7z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(0,217,163,0.7)"><path d="M8 5v14l11-7z"/></svg>
               )}
             </div>
             <div className="modal-info">
@@ -174,10 +176,11 @@ export default function DownloadModal({ movie, onClose }: DownloadModalProps) {
               <div className="gate-icon gate-icon--sub">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffa600" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               </div>
-              <p className="gate-title">Subscription Required</p>
+              <p className="gate-title">Payment Required</p>
+              <p className="gate-desc">Pay UGX 10,000 for this title or UGX 50,000 for everything.</p>
               <button className="gate-btn gate-btn--sub" onClick={openSubscribe}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-                Subscribe to Download
+                Pay to Download
               </button>
             </div>
           ) : (
@@ -275,7 +278,7 @@ export default function DownloadModal({ movie, onClose }: DownloadModalProps) {
           <div className="viewer-modal">
             <div className="viewer-bar">
               <div className="viewer-bar-left">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,77,184,0.8)" strokeWidth="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(0,217,163,0.8)" strokeWidth="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 <span className="viewer-title">{viewerTitle}</span>
               </div>
               <div className="viewer-bar-actions">
