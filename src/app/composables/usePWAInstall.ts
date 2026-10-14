@@ -1,4 +1,4 @@
-import { ref, onMounted } from '@vue/reactivity'
+import { ref } from '@vue/reactivity'
 
 const deferredPrompt = ref<any>(null)
 const isInstallable = ref(false)

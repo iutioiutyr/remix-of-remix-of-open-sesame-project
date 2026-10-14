@@ -1,4 +1,4 @@
-const BASE = '/api/pesapal'
+const BASE = '/api/public/pesapal'
 
 function getSafeErrorMessage(payload: unknown): string | null {
   if (!payload || typeof payload !== 'object' || Array.isArray(payload)) return null
