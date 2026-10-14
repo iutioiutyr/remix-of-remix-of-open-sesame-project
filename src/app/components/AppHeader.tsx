@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation, useNavigate } from '@tanstack/react-router'
 import { useAuth } from '../store/auth'
-import { loginOpen, subscribeOpen } from '../store/ui'
+import { loginOpen, subscribeOpen, subscribeMovie } from '../store/ui'
 import { usePWAInstall } from '../composables/usePWAInstall'
 import { theme, toggleTheme } from '../store/theme'
 import { useV } from '../reactive'
@@ -47,6 +47,7 @@ export default function AppHeader() {
     if (!isLoggedInV) {
       loginOpen.value = true
     } else {
+      subscribeMovie.value = null
       subscribeOpen.value = true
     }
   }
@@ -127,8 +128,8 @@ export default function AppHeader() {
               </button>
 
               <button className="btn-subscribe" onClick={handleSubscribeClick}>
-                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M2 19h20v2H2v-2zm2-3l3-8 5 4 4-6 3 10H4z" /></svg>
-                <span className="sub-label">SUBSCRIBE</span>
+                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" /><path d="M13 5v2M13 17v2M13 11v2" /></svg>
+                <span className="sub-label">GET ACCESS</span>
               </button>
 
               <div className="h-4 w-px bg-white/15"></div>

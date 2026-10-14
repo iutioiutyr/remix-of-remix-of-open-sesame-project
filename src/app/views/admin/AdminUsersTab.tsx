@@ -185,7 +185,7 @@ export default function AdminUsersTab() {
             Total: {users.length}
           </span>
           <span className="hstat green">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ff4db8" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00d9a3" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
             Active: {activeCount}
           </span>
           <button className="refresh-btn" onClick={loadUsers} disabled={loading}>

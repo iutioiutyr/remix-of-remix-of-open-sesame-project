@@ -200,7 +200,7 @@ export default function AdminTransactionsTab() {
 
       <div className="summary-grid">
         <div className="sum-card sum-success">
-          <div className="sum-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff4db8" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div className="sum-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d9a3" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg></div>
           <div className="sum-val">{successCount}</div>
           <div className="sum-label">Successful</div>
         </div>

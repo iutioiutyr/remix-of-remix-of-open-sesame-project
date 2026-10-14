@@ -4,7 +4,7 @@
   .tab-title { font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 4px; }
   .tab-sub { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
   .form-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; margin-bottom: 28px; display: flex; flex-direction: column; gap: 14px; }
-  .form-card.editing { border-color: rgba(255,77,184,0.25); }
+  .form-card.editing { border-color: rgba(0,217,163,0.25); }
   .form-title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .form-title { font-size: 0.95rem; font-weight: 700; color: #fff; }
   .cancel-edit-btn { padding: 5px 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 7px; color: rgba(255,255,255,0.5); font-size: 0.72rem; font-weight: 600; cursor: pointer; }
@@ -14,7 +14,7 @@
   .field label { font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-transform: uppercase; }
   .req { color: #f87171; }
   .field input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 9px 12px; color: #fff; font-size: 0.85rem; outline: none; transition: border-color 0.2s; width: 100%; box-sizing: border-box; }
-  .field input:focus { border-color: rgba(255,77,184,0.4); }
+  .field input:focus { border-color: rgba(0,217,163,0.4); }
   .field input::placeholder { color: rgba(255,255,255,0.25); }
   .select-wrap { position: relative; }
   .select-wrap select { width: 100%; appearance: none; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 9px 36px 9px 12px; color: rgba(255,255,255,0.8); font-size: 0.85rem; outline: none; cursor: pointer; }
@@ -31,7 +31,7 @@
   .btn-add:disabled { opacity: 0.4; cursor: not-allowed; }
   .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
   .item-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; overflow: hidden; }
-  .item-card.is-editing { border-color: rgba(255,77,184,0.35); }
+  .item-card.is-editing { border-color: rgba(0,217,163,0.35); }
   .ic-poster { position: relative; aspect-ratio: 2/3; background: rgba(255,255,255,0.04); overflow: hidden; }
   .ic-img { width: 100%; height: 100%; object-fit: cover; }
   .ic-no-poster { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
@@ -46,7 +46,7 @@
   .empty { text-align: center; color: rgba(255,255,255,0.25); padding: 40px; grid-column: 1/-1; }
   .search-bar-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
   .search-bar { flex: 1; display: flex; align-items: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; height: 38px; transition: border-color 0.2s; }
-  .search-bar:focus-within { border-color: rgba(255,77,184,0.4); }
+  .search-bar:focus-within { border-color: rgba(0,217,163,0.4); }
   .search-icon { flex-shrink: 0; margin: 0 10px; color: rgba(255,255,255,0.35); }
   .search-input { flex: 1; background: transparent; border: none; outline: none; color: #fff; font-size: 0.83rem; padding: 0 6px; min-width: 0; }
   .search-input::placeholder { color: rgba(255,255,255,0.25); }

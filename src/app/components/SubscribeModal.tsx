@@ -269,7 +269,7 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
         {step === 'active' && (
           <div className="center-state">
             <div className="success-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff4db8" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00d9a3" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h2 className="hdr-title mt-3">You're Subscribed!</h2>
             <p className="center-sub mt-1">Your subscription is active.</p>
@@ -385,7 +385,7 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
         {step === 'success' && (
           <div className="center-state">
             <div className="success-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff4db8" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00d9a3" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h2 className="hdr-title mt-3">Payment Successful!</h2>
             <p className="center-sub mt-1">Your subscription is now active. Enjoy unlimited downloads!</p>

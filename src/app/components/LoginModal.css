@@ -32,7 +32,7 @@
   .modal-logo { width: 120px; height: auto; object-fit: contain; display: block; }
   .brand-text-block { display: none; }
   .brand-name { font-size: 0.72rem; font-weight: 800; color: #fff; }
-  .brand-dot { color: #ff4db8; }
+  .brand-dot { color: #00d9a3; }
   .modal-heading { font-size: 0.98rem; font-weight: 800; color: #fff; margin-bottom: 3px; }
   .modal-sub { font-size: 0.65rem; color: rgba(255,255,255,0.38); margin-bottom: 13px; }
   .google-btn {
@@ -55,20 +55,20 @@
     transition: border-color 0.2s;
   }
   .field-input::placeholder { color: rgba(255,255,255,0.25); }
-  .field-input:focus { border-color: rgba(255,77,184,0.38); }
+  .field-input:focus { border-color: rgba(0,217,163,0.38); }
   .err-msg { font-size: 0.68rem; color: #f87171; margin-bottom: 6px; text-align: center; }
   .submit-btn {
     width: 100%; padding: 10px;
-    background: linear-gradient(135deg, #ff4db8, #ff8c00, #ffd700);
-    color: #1a0010; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.09em;
+    background: linear-gradient(135deg, #00d9a3, #00b4d8, #4dd0ff);
+    color: #001a14; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.09em;
     border: none; border-radius: 9px; cursor: pointer; margin-top: 2px; margin-bottom: 10px;
-    box-shadow: 0 6px 18px rgba(255,77,184,0.22); transition: filter 0.2s;
+    box-shadow: 0 6px 18px rgba(0,217,163,0.22); transition: filter 0.2s;
   }
   .submit-btn:hover:not(:disabled) { filter: brightness(1.06); }
   .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
   .footer-note { text-align: center; font-size: 0.6rem; color: rgba(255,255,255,0.28); }
-  .link { color: rgba(255,77,184,0.7); text-decoration: none; font-weight: 600; }
-  .link:hover { color: #ff4db8; }
+  .link { color: rgba(0,217,163,0.7); text-decoration: none; font-weight: 600; }
+  .link:hover { color: #00d9a3; }
 
   .plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 10px; }
   @media (max-width: 360px) { .plans-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -78,28 +78,28 @@
     cursor: pointer; display: flex; flex-direction: column; align-items: center;
     text-align: center; transition: border-color 0.2s, background 0.2s; gap: 3px;
   }
-  .plan-card.selected { border-color: rgba(255,77,184,0.45); background: rgba(255,77,184,0.06); }
-  .plan-card.popular { border-color: rgba(255,77,184,0.22); }
+  .plan-card.selected { border-color: rgba(0,217,163,0.45); background: rgba(0,217,163,0.06); }
+  .plan-card.popular { border-color: rgba(0,217,163,0.22); }
   .popular-badge {
     position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
-    background: linear-gradient(135deg, #ff4db8, #ffd700);
-    color: #1a0010; font-size: 0.44rem; font-weight: 800; letter-spacing: 0.06em;
+    background: linear-gradient(135deg, #00d9a3, #4dd0ff);
+    color: #001a14; font-size: 0.44rem; font-weight: 800; letter-spacing: 0.06em;
     padding: 1px 6px; border-radius: 99px; white-space: nowrap;
   }
   .plan-radio-row { display: flex; justify-content: center; }
   .plan-radio { width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; transition: border-color 0.15s; }
-  .plan-radio.active { border-color: #ff4db8; }
-  .plan-radio-dot { width: 5px; height: 5px; border-radius: 50%; background: #ff4db8; }
+  .plan-radio.active { border-color: #00d9a3; }
+  .plan-radio-dot { width: 5px; height: 5px; border-radius: 50%; background: #00d9a3; }
   .plan-name { font-size: 0.68rem; font-weight: 800; color: #fff; line-height: 1; }
   .plan-price-block { display: flex; align-items: baseline; gap: 2px; justify-content: center; }
   .plan-price { font-size: 0.82rem; font-weight: 800; color: #fff; line-height: 1; }
-  .plan-currency { font-size: 0.44rem; color: rgba(255,77,184,0.8); font-weight: 700; }
+  .plan-currency { font-size: 0.44rem; color: rgba(0,217,163,0.8); font-weight: 700; }
   .subscribe-btn {
     width: 100%; margin-top: 2px; padding: 10px 4px;
-    background: linear-gradient(135deg, #ff4db8, #ff8c00, #ffd700);
-    color: #1a0010; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
+    background: linear-gradient(135deg, #00d9a3, #00b4d8, #4dd0ff);
+    color: #001a14; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
     border: none; border-radius: 9px; cursor: pointer;
-    box-shadow: 0 6px 18px rgba(255,77,184,0.22); transition: filter 0.2s;
+    box-shadow: 0 6px 18px rgba(0,217,163,0.22); transition: filter 0.2s;
   }
   .subscribe-btn:hover { filter: brightness(1.07); }
 

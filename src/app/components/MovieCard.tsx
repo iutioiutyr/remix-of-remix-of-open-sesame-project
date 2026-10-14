@@ -4,10 +4,10 @@ import './MovieCard.css'
 
 const liquidPalettes = [
   'linear-gradient(160deg, #ff0080 0%, #7928ca 40%, #1a0038 100%)',
-  'linear-gradient(160deg, #ffd700 0%, #0070f3 40%, #001a3a 100%)',
+  'linear-gradient(160deg, #4dd0ff 0%, #0070f3 40%, #001a3a 100%)',
   'linear-gradient(160deg, #ff6b00 0%, #d90429 40%, #2d0010 100%)',
-  'linear-gradient(160deg, #ff4db8 0%, #00b4d8 40%, #001a2c 100%)',
-  'linear-gradient(160deg, #ffd700 0%, #ff6b35 40%, #1a0a00 100%)',
+  'linear-gradient(160deg, #00d9a3 0%, #00b4d8 40%, #001a2c 100%)',
+  'linear-gradient(160deg, #4dd0ff 0%, #ff6b35 40%, #1a0a00 100%)',
   'linear-gradient(160deg, #a855f7 0%, #ec4899 40%, #1a0026 100%)',
   'linear-gradient(160deg, #06d6a0 0%, #118ab2 40%, #001a2c 100%)',
   'linear-gradient(160deg, #f72585 0%, #7209b7 40%, #1a0030 100%)',
