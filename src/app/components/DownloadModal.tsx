@@ -24,10 +24,10 @@ export default function DownloadModal({ movie, onClose }: DownloadModalProps) {
   const loggedIn = useV(() => isLoggedIn.value)
   useV(() => isSubscribed.value)
   useV(() => userSubscription.value)
-  const subscribed = hasMovieAccess(movie?.id)
+  const subscribed = hasMovieAccess(movie ? String(movie.id) : undefined)
 
   function openLogin() { loginOpen.value = true }
-  function openSubscribe() { subscribeMovie.value = movie ? { id: movie.id, title: movie.title } : null; subscribeOpen.value = true }
+  function openSubscribe() { subscribeMovie.value = movie ? { id: String(movie.id), title: movie.title } : null; subscribeOpen.value = true }
 
   const [selectedEpNum, setSelectedEpNum] = useState<number | null>(null)
 
