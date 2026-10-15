@@ -5,8 +5,8 @@
 @theme inline {
   --color-background: var(--bg);
   --color-foreground: var(--text);
-  --color-primary: #3b9cff;
-  --color-primary-foreground: #ffffff;
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--on-primary);
   --color-muted-foreground: var(--text-dim);
   --color-border: var(--border);
   --color-input: var(--input-border);
@@ -18,16 +18,31 @@
 :root {
   font-family: 'Inter', sans-serif;
 
-  --bg:            #05070d;
-  --bg-header:     rgba(0,0,0,0.72);
-  --bg-nav:        rgba(5,7,13,0.96);
-  --bg-card:       rgba(255,255,255,0.04);
-  --bg-card-hover: rgba(255,255,255,0.07);
-  --border:        rgba(255,255,255,0.08);
-  --border-card:   rgba(255,255,255,0.08);
-  --text:          #ffffff;
-  --text-dim:      rgba(255,255,255,0.5);
-  --text-muted:    rgba(255,255,255,0.3);
+  --bg:            oklch(0.19 0.008 270);
+  --bg-header:     oklch(0.22 0.008 270 / 0.94);
+  --bg-nav:        oklch(0.22 0.008 270 / 0.98);
+  --bg-card:       oklch(0.24 0.008 270);
+  --bg-card-hover: oklch(0.29 0.008 270);
+  --border:        oklch(0.85 0.008 270 / 0.12);
+  --border-card:   var(--border);
+  --text:          oklch(0.95 0.005 270);
+  --text-dim:      oklch(0.73 0.008 270);
+  --text-muted:    oklch(0.62 0.008 270);
+  --primary: oklch(0.75 0.11 245);
+  --on-primary: oklch(0.2 0.025 250);
+  --brand-gold: oklch(0.85 0.17 85);
+  --brand-orange: oklch(0.73 0.19 55);
+  --brand-deep: oklch(0.65 0.2 40);
+  --brand-gradient: linear-gradient(120deg, var(--brand-gold), var(--brand-orange) 65%, var(--brand-deep));
+  --on-brand: oklch(0.23 0.035 60);
+  --media-text: oklch(0.97 0.004 270);
+  --media-dim: oklch(0.8 0.006 270);
+  --media-shade: oklch(0.13 0.005 270);
+  --hero-overlay: linear-gradient(90deg, oklch(0.13 0.005 270 / 0.9), oklch(0.13 0.005 270 / 0.4) 55%, transparent), linear-gradient(0deg, var(--bg), transparent 32%);
+  --soft-shadow: 0 12px 32px oklch(0.08 0.005 270 / 0.2);
+  --skeleton-base: color-mix(in oklch, var(--text) 6%, var(--bg));
+  --skeleton-highlight: color-mix(in oklch, var(--text) 12%, var(--bg));
+  --content-width: 1440px;
   --input-bg:      rgba(255,255,255,0.05);
   --input-border:  rgba(255,255,255,0.1);
   --scrollbar:     rgba(255,255,255,0.12);
@@ -47,6 +62,11 @@
   --input-bg:      rgba(0,0,0,0.04);
   --input-border:  rgba(0,0,0,0.12);
   --scrollbar:     rgba(0,0,0,0.14);
+  --primary: oklch(0.55 0.14 245);
+  --on-primary: oklch(0.98 0.005 270);
+  --bg: oklch(0.97 0.004 270);
+  --bg-header: oklch(0.99 0.003 270 / 0.95);
+  --bg-nav: oklch(0.99 0.003 270 / 0.98);
 }
 
 html {
