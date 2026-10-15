@@ -61,22 +61,6 @@ export default function Home() {
     { title: 'Animation', kicker: 'A WORLD OF IMAGINATION', items: all.filter(m => m.type === 'ANIMATION'), to: '/animation' as const },
   ].filter(section => section.items.length > 0), [all])
 
-  return () => {
-      if (autoTimer.current) clearInterval(autoTimer.current)
-    }
-  }, [heroSlides.length])
-
-  function particleStyle(n: number): React.CSSProperties {
-    return {
-      left: `${(n * 37 + 11) % 100}%`,
-      top: `${(n * 53 + 7) % 100}%`,
-      width: `${2 + (n % 3)}px`,
-      height: `${2 + (n % 3)}px`,
-      opacity: 0.06 + (n % 5) * 0.03,
-      animationDelay: `${n * 0.5}s`,
-    }
-  }
-
   return (
     <main className="vjs-Home relative w-full overflow-x-hidden">
       <section className="hero-section" aria-roledescription="carousel" aria-label="Featured titles">
