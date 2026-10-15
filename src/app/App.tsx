@@ -12,6 +12,7 @@ import { currentUser } from './store/auth'
 import { db } from './lib/firebase'
 import { useV } from './reactive'
 import './App.css'
+import './VisualRefresh.css'
 
 export default function App() {
   const location = useLocation()

@@ -12,3 +12,5 @@
 - The site (ported from Vue) lives in `src/app/`; shared stores use `@vue/reactivity` and React reads them via `useV()` in `src/app/reactive.ts` — keeps the original store logic unchanged.
 - The app shell (`src/app/App.tsx`) is loaded client-only from `__root.tsx` because Firebase and browser APIs run at module load.
 - Data and auth stay on the existing Firebase project; PesaPal calls go through `/api/public/pesapal/*` which injects server secrets.
+- Public-page visual overrides live in `src/app/VisualRefresh.css`, using global semantic tokens; this keeps migrated category layouts consistent without altering Firebase logic.
+- New visual controls use `VisualButton` so keyboard focus and control styling remain consistent.
