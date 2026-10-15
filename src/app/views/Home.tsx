@@ -1,19 +1,22 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
-import { useLocation, useNavigate } from '@tanstack/react-router'
+import { Link, useLocation, useNavigate } from '@tanstack/react-router'
 import MovieCard from '../components/MovieCard'
 import DownloadModal from '../components/DownloadModal'
 import type { Movie } from '../data/movies'
 import { publicAll, dbLoading, dbCarousel } from '../store/db'
 import { useV } from '../reactive'
+import VisualButton from '../components/VisualButton'
+import { ArrowLeft, ArrowRight, Pause, Play, Search } from 'lucide-react'
+import cinemaFeature from '../../assets/cinema-feature.jpg'
 import './Home.css'
 
 export default function Home() {
   const location = useLocation()
   const navigate = useNavigate()
   const externalQuery = useMemo(() => {
-    const params = new URLSearchParams(location.search as any)
+    const params = new URLSearchParams(location.searchStr)
     return params.get('q') || ''
-  }, [location.search])
+  }, [location.searchStr])
 
   const [mobileSearch, setMobileSearch] = useState('')
   function doMobileSearch() {
@@ -37,37 +40,28 @@ export default function Home() {
     setDownloadTarget(item)
   }
 
-  // Hero carousel
-  const heroSlides = useMemo(
-    () =>
-      carousel.map((s) => ({
-        title: s.title,
-        type: s.subtitle || 'STREAMING',
-        imageUrl: s.imageUrl || '',
-        bg: 'radial-gradient(ellipse 120% 100% at 80% 20%, #0d2a4a 0%, #071220 60%, #05070d 100%)',
-        accent: '#3b9cff',
-      })),
-    [carousel],
-  )
-
+  const heroSlides = useMemo(() => carousel.length > 0
+    ? carousel.map(s => ({ title: s.title, type: s.subtitle || 'Featured', imageUrl: s.imageUrl || cinemaFeature }))
+    : [{ title: 'LUO NIGER', type: 'Movies · Series · Music', imageUrl: cinemaFeature }], [carousel])
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [paused, setPaused] = useState(false)
   const SLIDE_MS = 6000
   const autoTimer = useRef<ReturnType<typeof setInterval> | null>(null)
-
-  function goToSlide(i: number) {
-    setCurrentSlide(i)
-  }
-  function nextSlide() {
-    setCurrentSlide((cur) => (heroSlides.length > 0 ? (cur + 1) % heroSlides.length : cur))
-  }
-
+  const activeSlide = heroSlides[currentSlide] ?? heroSlides[0]
+  function goToSlide(i: number) { setCurrentSlide(i) }
+  useEffect(() => { setCurrentSlide(0) }, [heroSlides.length])
   useEffect(() => {
-    if (currentSlide >= heroSlides.length) setCurrentSlide(0)
-  }, [heroSlides.length])
+    if (paused || heroSlides.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    autoTimer.current = setInterval(() => setCurrentSlide(cur => (cur + 1) % heroSlides.length), SLIDE_MS)
+    return () => { if (autoTimer.current) clearInterval(autoTimer.current) }
+  }, [heroSlides.length, paused, currentSlide])
+  const contentSections = useMemo(() => [
+    { title: 'Movies', kicker: 'THE BIG SCREEN', items: all.filter(m => m.type === 'MOVIES'), to: '/movies' as const },
+    { title: 'Series', kicker: 'ONE MORE EPISODE', items: all.filter(m => m.type === 'TV SERIES'), to: '/series' as const },
+    { title: 'Animation', kicker: 'A WORLD OF IMAGINATION', items: all.filter(m => m.type === 'ANIMATION'), to: '/animation' as const },
+  ].filter(section => section.items.length > 0), [all])
 
-  useEffect(() => {
-    autoTimer.current = setInterval(nextSlide, SLIDE_MS)
-    return () => {
+  return () => {
       if (autoTimer.current) clearInterval(autoTimer.current)
     }
   }, [heroSlides.length])
@@ -85,100 +79,43 @@ export default function Home() {
 
   return (
     <main className="vjs-Home relative w-full overflow-x-hidden">
-      {/* HERO SLIDESHOW */}
-      <section className="hero-section">
-        {heroSlides.length > 0 ? (
-          heroSlides.map((slide, i) => (
-            <div key={i} className={'hero-slide' + (currentSlide === i ? ' active' : '')}>
-              <div className="hero-slide-bg" style={{ background: slide.bg }}>
-                {slide.imageUrl ? (
-                  <img
-                    src={slide.imageUrl}
-                    className="hero-slide-img"
-                    onError={(e) => {
-                      ;(e.target as HTMLImageElement).style.display = 'none'
-                    }}
-                  />
-                ) : null}
-              </div>
-            </div>
-          ))
-        ) : (
-          <div className="hero-slide active">
-            <div className="hero-slide-bg hero-skeleton-bg"></div>
+      <section className="hero-section" aria-roledescription="carousel" aria-label="Featured titles">
+        {heroSlides.map((slide, i) => (
+          <div key={`${slide.title}-${i}`} className={'hero-slide' + (currentSlide === i ? ' active' : '')} aria-hidden={currentSlide !== i}>
+            <img src={slide.imageUrl} alt="" width={1600} height={912} className="hero-slide-img" fetchPriority={i === 0 ? 'high' : 'auto'} onError={e => { if (e.currentTarget.src !== new URL(cinemaFeature, window.location.href).href) e.currentTarget.src = cinemaFeature }} />
           </div>
-        )}
-
-        <div className="hero-particles">
-          {Array.from({ length: 14 }, (_, idx) => idx + 1).map((n) => (
-            <div key={n} className="particle" style={particleStyle(n)}></div>
-          ))}
-        </div>
-
+        ))}
+        <div className="hero-scrim" />
         <div className="hero-content-wrap">
           <div className="hero-content">
-            {heroSlides.length > 0 ? (
-              <>
-                <div key={currentSlide} className="hero-text-block">
-                  <p
-                    className="hero-category"
-                    style={{ color: heroSlides[currentSlide]?.accent || '#3b9cff' }}
-                  >
-                    {heroSlides[currentSlide]?.type || ''}
-                  </p>
-                  <h1 className="hero-title">{heroSlides[currentSlide]?.title || ''}</h1>
-                </div>
-                <div className="hero-dots">
-                  {heroSlides.map((_, i) => (
-                    <button
-                      key={i}
-                      className={'hero-dot' + (currentSlide === i ? ' active' : '')}
-                      onClick={() => goToSlide(i)}
-                    />
-                  ))}
-                </div>
-              </>
-            ) : (
-              <div className="hero-text-block">
-                <div className="skel-line skel-line--sm mb-3"></div>
-                <div className="skel-line skel-line--lg mb-2"></div>
-                <div className="skel-line skel-line--md"></div>
-              </div>
-            )}
+            <p className="hero-category">{activeSlide?.type}</p>
+            <h1 className="hero-title">{activeSlide?.title}</h1>
+            {carousel.length === 0 && <p className="hero-description">Luo movies. Great stories. Your favourite music.</p>}
+            <Link to="/movies" className="hero-browse">Explore movies <ArrowRight size={17} /></Link>
           </div>
         </div>
+        <div className="hero-footer">
+          <span className="hero-edition">LUO NIGER <span> / </span> THE COLLECTION</span>
+          {heroSlides.length > 1 && <div className="hero-controls">
+            <div className="hero-dots">{heroSlides.map((slide, i) => <VisualButton key={i} aria-label={`Show ${slide.title}`} aria-pressed={currentSlide === i} className={'hero-dot' + (currentSlide === i ? ' active' : '')} onClick={() => goToSlide(i)} />)}</div>
+            <span className="hero-counter">{String(currentSlide + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}</span>
+            <VisualButton className="hero-arrow" aria-label="Previous slide" onClick={() => goToSlide((currentSlide - 1 + heroSlides.length) % heroSlides.length)}><ArrowLeft size={16} /></VisualButton>
+            <VisualButton className="hero-arrow" aria-label={paused ? 'Play slideshow' : 'Pause slideshow'} onClick={() => setPaused(!paused)}>{paused ? <Play size={14} /> : <Pause size={14} />}</VisualButton>
+            <VisualButton className="hero-arrow" aria-label="Next slide" onClick={() => goToSlide((currentSlide + 1) % heroSlides.length)}><ArrowRight size={16} /></VisualButton>
+          </div>}
+        </div>
       </section>
-
-      {/* MOBILE SEARCH BAR (below carousel, hidden on desktop) */}
+      <nav className="collection-nav" aria-label="Browse collection">
+        <Link to="/movies">Movies <ArrowRight size={14} /></Link>
+        <Link to="/series">Series <ArrowRight size={14} /></Link>
+        <Link to="/animation">Animation <ArrowRight size={14} /></Link>
+        <Link to="/music">Music <ArrowRight size={14} /></Link>
+      </nav>
       <div className="mobile-search-bar">
-        <form
-          className="mobile-search-form"
-          onSubmit={(e) => {
-            e.preventDefault()
-            doMobileSearch()
-          }}
-        >
-          <svg className="ms-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-          <input
-            value={mobileSearch}
-            onChange={(e) => setMobileSearch(e.target.value)}
-            type="text"
-            placeholder="Search movies, series, anime..."
-            className="ms-input"
-            onKeyUp={(e) => {
-              if (e.key === 'Enter') doMobileSearch()
-            }}
-          />
-          <button type="submit" className="ms-btn">
-            GO
-          </button>
+        <form className="mobile-search-form" onSubmit={e => { e.preventDefault(); doMobileSearch() }}>
+          <Search className="ms-icon" />
+          <input aria-label="Search titles" value={mobileSearch} onChange={e => setMobileSearch(e.target.value)} placeholder="Search movies, series, animation…" className="ms-input" />
+          <VisualButton type="submit" className="ms-btn" aria-label="Search"><ArrowRight size={16} /></VisualButton>
         </form>
       </div>
 
@@ -209,8 +146,8 @@ export default function Home() {
                 d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <h3 className="mt-4 text-base font-bold text-white">No results for "{externalQuery}"</h3>
-            <p className="mt-1 text-sm text-white/40">Try a different keyword</p>
+            <h3 className="mt-4 text-base font-bold text-foreground">No results for "{externalQuery}"</h3>
+            <p className="mt-1 text-sm text-muted-foreground">Try a different keyword</p>
           </div>
         ) : loading ? (
           <>
@@ -233,33 +170,20 @@ export default function Home() {
             </div>
           </>
         ) : (
-          <section className="content-section">
-            <div className="section-header">
-              <div>
-                <p className="section-kicker">ALL CONTENT</p>
-                <h2 className="section-title">Movies, Series &amp; Animation</h2>
-              </div>
-              <span className="count-badge">{all.length}</span>
-            </div>
-            {all.length > 0 ? (
-              <div className="poster-grid">
-                {all.map((movie) => (
-                  <MovieCard key={movie.id} movie={movie} onClick={() => openDownload(movie)} />
-                ))}
-              </div>
-            ) : (
-              <div className="empty-state">
-                <div className="loading-msg">
-                  <div className="loading-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <p>LOADING PLEASE WAIT</p>
+          <>
+            {contentSections.length > 0 ? contentSections.map(section => (
+              <section className="content-section" key={section.title}>
+                <div className="section-header">
+                  <div><p className="section-kicker">{section.kicker}</p><h2 className="section-title">{section.title}</h2></div>
+                  <Link to={section.to} className="section-view-all">View all <ArrowRight size={15} /></Link>
                 </div>
-              </div>
-            )}
-          </section>
+                <div className="poster-grid">{section.items.slice(0, 12).map(movie => <MovieCard key={movie.id} movie={movie} onClick={() => openDownload(movie)} />)}</div>
+              </section>
+            )) : <section className="content-section">
+              <div className="section-header"><div><p className="section-kicker">THE COLLECTION</p><h2 className="section-title">Movies, Series &amp; Animation</h2></div></div>
+              <div className="catalog-empty"><span className="catalog-empty-mark"><Play size={22} /></span><h3>The next story is on its way</h3><p>New titles will appear here soon.</p></div>
+            </section>}
+          </>
         )}
       </div>
 
