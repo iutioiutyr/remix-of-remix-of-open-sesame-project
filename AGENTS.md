@@ -14,3 +14,4 @@
 - Data and auth stay on the existing Firebase project; PesaPal calls go through `/api/public/pesapal/*` which injects server secrets.
 - Public-page visual overrides live in `src/app/VisualRefresh.css`, using global semantic tokens; this keeps migrated category layouts consistent without altering Firebase logic.
 - New visual controls use `VisualButton` so keyboard focus and control styling remain consistent.
+- Retired content URLs redirect to the movie catalog; preserve existing Firebase records rather than deleting data when removing a category from the site.

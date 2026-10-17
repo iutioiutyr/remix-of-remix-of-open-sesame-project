@@ -2,9 +2,8 @@
 #app { letter-spacing: 0; --content-width: 100%; min-width: 0; }
 #app .header-bar { background: var(--bg-header); border: 0; border-bottom: 1px solid var(--border); border-image: none; box-shadow: none; }
 #app .header-inner { max-width: var(--content-width); margin: auto; height: 76px; padding: 0 32px; gap: 22px; }
-#app .brand-logo { height: 26px; }
+#app .brand-logo { height: auto; width: 192px; max-width: 100%; }
 #app .brand-link { min-width: 0; flex-direction: column; align-items: flex-start; gap: 3px; }
-#app .brand-category { font-size: 0.6rem; font-weight: 700; color: var(--brand-gold); line-height: 1; }
 #app .right-actions { min-width: 0; }
 #app .nav-pill { background: transparent; border: 0; padding: 0; gap: 4px; }
 #app .nav-item { color: var(--text-dim); background: transparent; box-shadow: none; border: 0; border-radius: 6px; padding: 10px 12px; font-size: 0.7rem; letter-spacing: 0; }
@@ -55,4 +54,7 @@
 @media (max-width: 1199px) { #app .header-inner { gap: 10px; padding: 0 20px; } #app .nav-item { padding: 9px; } #app .poster-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 @media (max-width: 767px) { #app .poster-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 10px; } #app .content-wrap, #app .page-container, #app .page-banner-content { padding-left: 16px; padding-right: 16px; } #app .header-inner { height: 62px; padding: 0 16px; gap: 8px; } #app .brand-logo { height: 22px; } #app .section-title { font-size: 1.2rem; } #app .page-title { font-size: 2rem; } #app .page-banner { display: flex; height: 170px; } #app .care-inner { padding: 24px 16px; } }
 @media (max-width: 479px) { #app .header-inner { padding: 0 12px; } #app .btn-subscribe { width: 32px; height: 32px; padding: 0; } #app .poster-grid { gap: 18px 8px; } }
+#app .brand-logo { height: auto; }
+@media (max-width: 767px) { #app .brand-logo { width: 150px; } }
+@media (max-width: 359px) { #app .brand-logo { width: 124px; } }
 @media (prefers-reduced-motion: reduce) { #app *, #app *::before, #app *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }

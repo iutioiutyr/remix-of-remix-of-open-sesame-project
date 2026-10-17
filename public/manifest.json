@@ -1,13 +1,13 @@
 {
   "name": "LUO NIGER MOVIES",
   "short_name": "LUO NIGER MOVIES",
-  "description": "Download Luo translated movies, series and animations by LUO NIGER MOVIES.",
+  "description": "Nigerian movies and music by LUO NIGER MOVIES.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#050c08",
-  "theme_color": "#050c08",
+  "background_color": "#05070d",
+  "theme_color": "#05070d",
   "lang": "en-UG",
   "categories": ["entertainment", "video"],
   "icons": [
