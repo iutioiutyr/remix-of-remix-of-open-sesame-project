@@ -85,10 +85,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "LUO NIGER" },
+      { name: "author", content: "LUO NIGER MOVIES" },
       { name: "theme-color", content: "#050c08" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
-      { name: "apple-mobile-web-app-title", content: "LUO NIGER" },
+      { name: "apple-mobile-web-app-title", content: "LUO NIGER MOVIES" },
       { name: "twitter:site", content: "@luoniger" },
     ],
     links: [
