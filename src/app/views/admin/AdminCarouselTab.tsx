@@ -79,8 +79,7 @@ export default function AdminCarouselTab() {
             <select value={form.linkContent} onChange={(e) => setForm({ ...form, linkContent: e.target.value })}>
               <option value="No Link">No Link</option>
               <option value="Movies">Movies</option>
-              <option value="Series">Series</option>
-              <option value="Animation">Animation</option>
+              <option value="Music">Music</option>
             </select>
             <svg className="sel-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9" /></svg>
           </div>

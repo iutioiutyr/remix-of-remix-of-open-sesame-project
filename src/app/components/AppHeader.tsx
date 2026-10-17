@@ -6,6 +6,7 @@ import { usePWAInstall } from '../composables/usePWAInstall'
 import { theme, toggleTheme } from '../store/theme'
 import { useV } from '../reactive'
 import './AppHeader.css'
+import brandLogo from '../../assets/luo-niger-movies-logo.png'
 
 export default function AppHeader() {
   const location = useLocation()
@@ -37,8 +38,6 @@ export default function AppHeader() {
   const navItems = [
     { label: 'HOME', path: '/' },
     { label: 'MOVIES', path: '/movies' },
-    { label: 'SERIES', path: '/series' },
-    { label: 'ANIMATION', path: '/animation' },
     { label: 'MUSIC', path: '/music' },
     ...(isAdminV ? [{ label: 'ADMIN', path: '/admin' }] : []),
   ]
@@ -66,8 +65,7 @@ export default function AppHeader() {
 
             {/* Brand */}
             <Link to="/" className="brand-link">
-              <img src="/logo.png" alt="LUO NIGER MOVIES" className="brand-logo" />
-              <span className="brand-category">MOVIES</span>
+              <img src={brandLogo} alt="LUO NIGER MOVIES" width={1496} height={390} className="brand-logo" />
             </Link>
 
             {/* Desktop nav */}
@@ -95,7 +93,7 @@ export default function AppHeader() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 type="text"
-                placeholder="Search movies, series, anime..."
+                placeholder="Search movies..."
                 className="hs-input"
                 onKeyUp={(e) => { if (e.key === 'Enter') doSearch() }}
               />

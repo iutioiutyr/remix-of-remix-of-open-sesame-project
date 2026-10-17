@@ -73,7 +73,7 @@ export default function SubscribeModal({ open, onClose }: SubscribeModalProps) {
   const movieTarget = useV(() => subscribeMovie.value)
   const PLANS: ModalPlan[] = [
     ...(movieTarget ? [{ id: 'movie:' + movieTarget.id, name: movieTarget.title, duration: 'This title only', price: 10000, days: 0, popular: false }] : []),
-    { id: 'all', name: 'All Access', duration: 'All movies & series · 30 Days', price: 50000, days: 30, popular: true },
+    { id: 'all', name: 'All Access', duration: 'All movies · 30 Days', price: 50000, days: 30, popular: true },
   ]
 
   const activePlan = PLANS.find(p => p.id === selectedPlanId)

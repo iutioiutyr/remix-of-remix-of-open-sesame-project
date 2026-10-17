@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from '@tanstack/react-router'
 import MovieCard from '../components/MovieCard'
 import DownloadModal from '../components/DownloadModal'
 import type { Movie } from '../data/movies'
-import { publicAll, dbLoading, dbCarousel } from '../store/db'
+import { publicMovies, dbLoading, dbCarousel } from '../store/db'
 import { useV } from '../reactive'
 import VisualButton from '../components/VisualButton'
 import { ArrowLeft, ArrowRight, Pause, Play, Search } from 'lucide-react'
@@ -25,7 +25,7 @@ export default function Home() {
     }
   }
 
-  const all = useV(() => publicAll.value)
+  const all = useV(() => publicMovies.value)
   const loading = useV(() => dbLoading.value)
   const carousel = useV(() => dbCarousel.value)
 
@@ -42,7 +42,7 @@ export default function Home() {
 
   const heroSlides = useMemo(() => carousel.length > 0
     ? carousel.map(s => ({ title: s.title, type: s.subtitle || 'Featured', imageUrl: s.imageUrl || cinemaFeature }))
-    : [{ title: 'LUO NIGER MOVIES', type: 'Movies · Series · Music', imageUrl: cinemaFeature }], [carousel])
+    : [{ title: 'LUO NIGER MOVIES', type: 'Nigerian Movies · Music', imageUrl: cinemaFeature }], [carousel])
   const [currentSlide, setCurrentSlide] = useState(0)
   const [paused, setPaused] = useState(false)
   const SLIDE_MS = 6000
@@ -57,8 +57,6 @@ export default function Home() {
   }, [heroSlides.length, paused, currentSlide])
   const contentSections = useMemo(() => [
     { title: 'Movies', kicker: 'THE BIG SCREEN', items: all.filter(m => m.type === 'MOVIES'), to: '/movies' as const },
-    { title: 'Series', kicker: 'ONE MORE EPISODE', items: all.filter(m => m.type === 'TV SERIES'), to: '/series' as const },
-    { title: 'Animation', kicker: 'A WORLD OF IMAGINATION', items: all.filter(m => m.type === 'ANIMATION'), to: '/animation' as const },
   ].filter(section => section.items.length > 0), [all])
 
   return (
@@ -74,7 +72,7 @@ export default function Home() {
           <div className="hero-content">
             <p className="hero-category">{activeSlide?.type}</p>
             <h1 className="hero-title">{activeSlide?.title}</h1>
-            {carousel.length === 0 && <p className="hero-description">Luo movies. Great stories. Your favourite music.</p>}
+            {carousel.length === 0 && <p className="hero-description">Nigerian movies. Great stories. Your favourite music.</p>}
             <Link to="/movies" className="hero-browse">Explore movies <ArrowRight size={17} /></Link>
           </div>
         </div>
@@ -92,7 +90,7 @@ export default function Home() {
       <div className="mobile-search-bar">
         <form className="mobile-search-form" onSubmit={e => { e.preventDefault(); doMobileSearch() }}>
           <Search className="ms-icon" />
-          <input aria-label="Search titles" value={mobileSearch} onChange={e => setMobileSearch(e.target.value)} placeholder="Search movies, series, animation…" className="ms-input" />
+          <input aria-label="Search titles" value={mobileSearch} onChange={e => setMobileSearch(e.target.value)} placeholder="Search movies…" className="ms-input" />
           <VisualButton type="submit" className="ms-btn" aria-label="Search"><ArrowRight size={16} /></VisualButton>
         </form>
       </div>
@@ -158,7 +156,7 @@ export default function Home() {
                 <div className="poster-grid">{section.items.slice(0, 12).map(movie => <MovieCard key={movie.id} movie={movie} onClick={() => openDownload(movie)} />)}</div>
               </section>
             )) : <section className="content-section">
-              <div className="section-header"><div><p className="section-kicker">THE COLLECTION</p><h2 className="section-title">Movies, Series &amp; Animation</h2></div></div>
+              <div className="section-header"><div><p className="section-kicker">THE COLLECTION</p><h2 className="section-title">Nigerian Movies</h2></div><Link to="/music" className="section-view-all">Music <ArrowRight size={15} /></Link></div>
               <div className="catalog-empty"><span className="catalog-empty-mark"><Play size={22} /></span><h3>The next story is on its way</h3><p>New titles will appear here soon.</p></div>
             </section>}
           </>
