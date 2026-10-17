@@ -44,7 +44,6 @@
 #app .loading-spinner { border-color: var(--border); border-top-color: var(--primary); }
 #app .care-banner { background: var(--bg-card); border-color: var(--border); }
 #app .care-inner { max-width: var(--content-width); margin: auto; padding: 28px 32px; }
-#app .music-page { max-width: none; width: 100%; }
 @media (max-width: 639px) { #app .header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; } }
 #app .care-label, #app .care-icon { color: var(--primary); }
 #app .care-icon { background: var(--input-bg); border-color: var(--border); border-radius: 8px; }

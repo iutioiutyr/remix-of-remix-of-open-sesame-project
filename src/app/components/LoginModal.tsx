@@ -104,9 +104,9 @@ export default function LoginModal({ open, onClose, onLoggedIn }: LoginModalProp
         {step === 1 ? (
           <>
             <div className="modal-brand">
-              <img src="/logo.png" alt="LUO NIGER" className="modal-logo" />
+              <img src="/logo.png" alt="LUO NIGER MOVIES" className="modal-logo" />
               <div className="brand-text-block">
-                <span className="brand-name">LUO NIGER</span>
+                <span className="brand-name">LUO NIGER MOVIES</span>
               </div>
             </div>
             <h2 className="modal-heading">{isRegister ? 'Create Account' : 'Sign in'}</h2>
@@ -151,9 +151,9 @@ export default function LoginModal({ open, onClose, onLoggedIn }: LoginModalProp
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
               </button>
               <div className="modal-brand" style={{ marginBottom: 0 }}>
-                <img src="/logo.png" alt="LUO NIGER" className="modal-logo" />
+                <img src="/logo.png" alt="LUO NIGER MOVIES" className="modal-logo" />
                 <div className="brand-text-block">
-                  <span className="brand-name">LUO NIGER</span>
+                  <span className="brand-name">LUO NIGER MOVIES</span>
                 </div>
               </div>
             </div>
