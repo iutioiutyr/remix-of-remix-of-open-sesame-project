@@ -6,10 +6,10 @@ const Page = lazy(() => import("@/app/views/Home"));
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LUO NIGER MOVIES | Luo Movies, Series & Music" },
-      { name: "description", content: "Uganda's #1 source for Luo translated movies, series and animations. Download HD MP4 movies with Luo subtitles by LUO NIGER MOVIES." },
-      { property: "og:title", content: "LUO NIGER MOVIES | Luo Movies, Series & Music" },
-      { property: "og:description", content: "Uganda's #1 source for Luo translated movies, series and animations. Download HD MP4 movies with Luo subtitles by LUO NIGER MOVIES." },
+      { title: "LUO NIGER MOVIES | Nigerian Movies & Music" },
+      { name: "description", content: "Enjoy Nigerian movies and music with LUO NIGER MOVIES. Browse the collection and download your favourite movies." },
+      { property: "og:title", content: "LUO NIGER MOVIES | Nigerian Movies & Music" },
+      { property: "og:description", content: "Enjoy Nigerian movies and music with LUO NIGER MOVIES. Browse the collection and download your favourite movies." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
