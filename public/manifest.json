@@ -1,7 +1,7 @@
 {
-  "name": "LUO NIGER",
-  "short_name": "LUO NIGER",
-  "description": "Download Luo translated movies, series and animations by LUO NIGER.",
+  "name": "LUO NIGER MOVIES",
+  "short_name": "LUO NIGER MOVIES",
+  "description": "Download Luo translated movies, series and animations by LUO NIGER MOVIES.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

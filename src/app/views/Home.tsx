@@ -42,7 +42,7 @@ export default function Home() {
 
   const heroSlides = useMemo(() => carousel.length > 0
     ? carousel.map(s => ({ title: s.title, type: s.subtitle || 'Featured', imageUrl: s.imageUrl || cinemaFeature }))
-    : [{ title: 'LUO NIGER', type: 'Movies · Series · Music', imageUrl: cinemaFeature }], [carousel])
+    : [{ title: 'LUO NIGER MOVIES', type: 'Movies · Series · Music', imageUrl: cinemaFeature }], [carousel])
   const [currentSlide, setCurrentSlide] = useState(0)
   const [paused, setPaused] = useState(false)
   const SLIDE_MS = 6000
@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-footer">
-          <span className="hero-edition">LUO NIGER <span> / </span> THE COLLECTION</span>
+          <span className="hero-edition">LUO NIGER MOVIES <span> / </span> THE COLLECTION</span>
           {heroSlides.length > 1 && <div className="hero-controls">
             <div className="hero-dots">{heroSlides.map((slide, i) => <VisualButton key={i} aria-label={`Show ${slide.title}`} aria-pressed={currentSlide === i} className={'hero-dot' + (currentSlide === i ? ' active' : '')} onClick={() => goToSlide(i)} />)}</div>
             <span className="hero-counter">{String(currentSlide + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}</span>
@@ -89,12 +89,6 @@ export default function Home() {
           </div>}
         </div>
       </section>
-      <nav className="collection-nav" aria-label="Browse collection">
-        <Link to="/movies">Movies <ArrowRight size={14} /></Link>
-        <Link to="/series">Series <ArrowRight size={14} /></Link>
-        <Link to="/animation">Animation <ArrowRight size={14} /></Link>
-        <Link to="/music">Music <ArrowRight size={14} /></Link>
-      </nav>
       <div className="mobile-search-bar">
         <form className="mobile-search-form" onSubmit={e => { e.preventDefault(); doMobileSearch() }}>
           <Search className="ms-icon" />

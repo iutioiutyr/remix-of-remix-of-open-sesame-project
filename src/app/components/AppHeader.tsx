@@ -66,12 +66,13 @@ export default function AppHeader() {
 
             {/* Brand */}
             <Link to="/" className="brand-link">
-              <img src="/logo.png" alt="LUO NIGER" className="brand-logo" />
+              <img src="/logo.png" alt="LUO NIGER MOVIES" className="brand-logo" />
+              <span className="brand-category">MOVIES</span>
             </Link>
 
             {/* Desktop nav */}
             <nav className="nav-pill hidden items-center lg:flex">
-              {navItems.map((item) => (
+              {navItems.filter((item) => item.label !== 'ADMIN').map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
