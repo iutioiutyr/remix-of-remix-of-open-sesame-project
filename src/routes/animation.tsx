@@ -1,9 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { lazy } from "react";
-
-const Page = lazy(() => import("@/app/views/Animation"));
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/animation")({
+  beforeLoad: () => { throw redirect({ to: '/movies', replace: true }); },
   head: () => ({
     meta: [
       { title: "Animation | LUO NIGER MOVIES" },
@@ -14,9 +12,4 @@ export const Route = createFileRoute("/animation")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: AnimationPage,
 });
-
-function AnimationPage() {
-  return <Page />;
-}
