@@ -1,4 +1,7 @@
 # Visual refresh
+- [ ] Generate and install the full LUO NIGER MOVIES logo and matching brand images.
+- [ ] Keep Movies and Music only in public sections and admin navigation.
+- [ ] Verify logo rendering and navigation across devices.
 - [x] Rename the website LUO NIGER MOVIES and expand layouts edge to edge.
 - [x] Hide the desktop admin link and remove the navigation below the slideshow.
 - [x] Check page layouts on phone, tablet and desktop screens.
