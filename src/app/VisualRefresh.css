@@ -1,8 +1,11 @@
 /* Shared public-page design, layered above the original migrated styles. */
-#app { letter-spacing: 0; }
+#app { letter-spacing: 0; --content-width: 100%; min-width: 0; }
 #app .header-bar { background: var(--bg-header); border: 0; border-bottom: 1px solid var(--border); border-image: none; box-shadow: none; }
 #app .header-inner { max-width: var(--content-width); margin: auto; height: 76px; padding: 0 32px; gap: 22px; }
 #app .brand-logo { height: 26px; }
+#app .brand-link { min-width: 0; flex-direction: column; align-items: flex-start; gap: 3px; }
+#app .brand-category { font-size: 0.6rem; font-weight: 700; color: var(--brand-gold); line-height: 1; }
+#app .right-actions { min-width: 0; }
 #app .nav-pill { background: transparent; border: 0; padding: 0; gap: 4px; }
 #app .nav-item { color: var(--text-dim); background: transparent; box-shadow: none; border: 0; border-radius: 6px; padding: 10px 12px; font-size: 0.7rem; letter-spacing: 0; }
 #app .nav-item--active { color: var(--text); background: var(--bg-card-hover); }
@@ -11,7 +14,7 @@
 #app .hs-input { color: var(--text); font-size: 0.78rem; }
 #app .hs-input::placeholder { color: var(--text-muted); }
 #app .hs-btn { background: var(--bg-card-hover); color: var(--text-dim); height: 30px; letter-spacing: 0; }
-#app .btn-subscribe { background: var(--primary); color: var(--on-primary); box-shadow: none; border: 0; border-radius: 6px; padding: 10px 12px; letter-spacing: 0; }
+#app .btn-subscribe { background: var(--primary); color: var(--on-primary); box-shadow: none; border: 0; border-radius: 6px; padding: 10px 12px; letter-spacing: 0; justify-content: center; }
 #app .btn-login { color: var(--text-dim); border-color: var(--border); padding: 9px 10px; letter-spacing: 0; }
 #app .mobile-bottom-nav { background: var(--bg-nav); border-color: var(--border); }
 #app .mob-nav-item { color: var(--text-muted); letter-spacing: 0; }
@@ -41,6 +44,8 @@
 #app .loading-spinner { border-color: var(--border); border-top-color: var(--primary); }
 #app .care-banner { background: var(--bg-card); border-color: var(--border); }
 #app .care-inner { max-width: var(--content-width); margin: auto; padding: 28px 32px; }
+#app .music-page { max-width: none; width: 100%; }
+@media (max-width: 639px) { #app .header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; } }
 #app .care-label, #app .care-icon { color: var(--primary); }
 #app .care-icon { background: var(--input-bg); border-color: var(--border); border-radius: 8px; }
 #app .care-desc { color: var(--text-dim); }
